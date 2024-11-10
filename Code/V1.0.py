@@ -36,19 +36,21 @@ for index, row in edges_df.iterrows():
 
 # Centrality Measures
 degree_centrality = nx.degree_centrality(G)
-closeness_centrality = nx.closeness_centrality(G)
-betweenness_centrality = nx.betweenness_centrality(G)
-pagerank = nx.pagerank(G) 
-
-
 print("\nDegree Centrality:")
 print(degree_centrality)
 
+closeness_centrality = nx.closeness_centrality(G)
 print("\nCloseness Centrality:")
 print(closeness_centrality)
 
+betweenness_centrality = nx.betweenness_centrality(G)
 print("\nBetweenness Centrality:")
 print(betweenness_centrality)
 
+pagerank = nx.pagerank(G) 
 print("\nPageRank:")
 print(pagerank)
+
+eigenvector_centrality = nx.eigenvector_centrality(G, max_iter=1000, tol=1e-06)
+print("\nEigenvector Centrality:")
+print(eigenvector_centrality)
