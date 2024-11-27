@@ -1,0 +1,19 @@
+pop
+house
+edm
+rap
+hip hop
+funk
+trap
+r&b
+k-pop
+electronica
+rock
+reggaeton
+bollywood
+classical
+progressive
+eurovision
+indie
+opm
+country
