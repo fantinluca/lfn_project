@@ -5,6 +5,7 @@ import re
 
 # Gets the current directory where the script is located
 current_dir = os.path.dirname(__file__)
+#print(current_dir)
 current_dir = current_dir.replace("src", "dataset")
 
 # Builds full paths to .csv files within the current directory
