@@ -7,14 +7,25 @@ import networkit as nk
 def convert_to_networkit(nx_graph):
     node_mapping = {node: i for i, node in enumerate(nx_graph.nodes())}
     # Initialize an empty networkit graph
-    nk_graph = nk.graph.Graph(n=len(node_mapping), weighted=False, directed=nx_graph.is_directed())
+    nk_graph = nk.graph.Graph(n=len(node_mapping), weighted=False)
     
+    # Create a new attribute named 'nameAtt' of type 'str'
+    global nameAtt
+    nameAtt = nk_graph.attachNodeAttribute("name", str)
+
+
+
+    for node in nx_graph.nodes():
+        nameAtt[node_mapping[node]] = str(nx_graph.nodes[node].get('name', str(node)))
+
     # Add edges from the NetworkX graph to the NetworKit graph
     for u, v, data in nx_graph.edges(data=True):
         weight = 1.0  # Default weight if unweighted
         nk_graph.addEdge(node_mapping[u], node_mapping[v], weight)
 
     return nk_graph
+
+
 
 
 # Gets the current directory where the script is located
@@ -29,6 +40,7 @@ edges_path = os.path.join(current_dir, 'edges.csv')
 nodes_df = pd.read_csv(nodes_path)#, nrows=1000)  #limite 1.000 nodi
 edges_df = pd.read_csv(edges_path)#, nrows=1000)  #limite 1.000 edges
 
+''''
 print("Colonne di nodes.csv:", nodes_df.columns)
 
 print("Prime 20 righe di nodes.csv:")
@@ -36,7 +48,7 @@ print(nodes_df.head(20))
 
 print("\nPrime 20 righe di edges.csv:")
 print(edges_df.head(20))
-
+'''
 # Create Graph
 G = nx.Graph()
 
@@ -55,39 +67,44 @@ degree_centrality = nx.degree_centrality(G)
 top_degree_centrality = sorted(degree_centrality.items(), key=lambda x: x[1], reverse=True)[:10]
 print("\nTop 10 Degree Centrality:")
 for node, centrality in top_degree_centrality:
-    print(f"Node: {node}, Degree Centrality: {centrality}")
-
+    print(f"Node: {node},  Name: { G.nodes[node]['name']  },  Degree Centrality: {centrality}")
+'''
 # Closeness Centrality
 closeness_centrality = nx.closeness_centrality(G)
 top_closeness_centrality = sorted(closeness_centrality.items(), key=lambda x: x[1], reverse=True)[:10]
 print("\nTop 10 Closeness Centrality:")
 for node, centrality in top_closeness_centrality:
-    print(f"Node: {node}, Closeness Centrality: {centrality}")
+    print(f"Node: {node},   Name: { G.nodes[node]['name']  },  Closeness Centrality: {centrality}")
 
 # Betweenness Centrality
 betweenness_centrality = nx.betweenness_centrality(G)
 top_betweenness_centrality = sorted(betweenness_centrality.items(), key=lambda x: x[1], reverse=True)[:10]
 print("\nTop 10 Betweenness Centrality:")
 for node, centrality in top_betweenness_centrality:
-    print(f"Node: {node}, Betweenness Centrality: {centrality}")
+    print(f"Node: {node},   Name: { G.nodes[node]['name']  },  Betweenness Centrality: {centrality}")
 
 # PageRank
 pagerank = nx.pagerank(G) 
 top_pagerank = sorted(pagerank.items(), key=lambda x: x[1], reverse=True)[:10]
 print("\nTop 10 PageRank:")
 for node, rank in top_pagerank:
-    print(f"Node: {node}, PageRank: {rank}")
+    print(f"Node: {node},   Name: { G.nodes[node]['name']  },  PageRank: {rank}")
 
 # Eigenvector Centrality
 eigenvector_centrality = nx.eigenvector_centrality(G, max_iter=1000, tol=1e-06)
 top_eigenvector_centrality = sorted(eigenvector_centrality.items(), key=lambda x: x[1], reverse=True)[:10]
 print("\nTop 10 Eigenvector Centrality:")
 for node, centrality in top_eigenvector_centrality:
-    print(f"Node: {node}, Eigenvector Centrality: {centrality}")
+    print(f"Node: {node},   Name: { G.nodes[node]['name']  },  Eigenvector Centrality: {centrality}")
+'''
+
 
 
 # LOCAL clustering coefficients
 G_nk = convert_to_networkit(G)
+print(nk.overview(G_nk))
+
+
 #clustCoeff = nk.globals.ClusteringCoefficient.exactGlobal(G_nk)
 clustCoeff = nk.centrality.LocalClusteringCoefficient(G_nk)                 # Local clustering coefficient
 # Run the algorithm to compute the coefficients
@@ -103,7 +120,7 @@ top_clustCoeff = sorted(clustering_coefficients, key=lambda x: x, reverse=True)[
 list_top_coeff_pairs = list(enumerate(top_clustCoeff))
 print("\nTop 10 Local clustering Coefficients:")
 for node, coeff in enumerate(list_top_coeff_pairs):
-    print(f"Node {node}: Clustering Coefficient = {coeff}")
+    print(f"Node: {node}, Name: {nameAtt[node]},  Clustering Coefficient = {coeff}")
 
 
 # GLOBAL CLUSTERING COEFF
