@@ -137,7 +137,6 @@ clustCoeff.run()
 
 # Retrieve the clustering coefficients for each node
 clustering_coefficients = clustCoeff.scores()
-print(clustering_coefficients)
 
 # Print the coefficients for each node
 #for node, coeff in enumerate(clustering_coefficients):
