@@ -18,10 +18,15 @@ def convert_to_networkit(nx_graph):
     for node in nx_graph.nodes():
         nameAtt[node_mapping[node]] = str(nx_graph.nodes[node].get('name', str(node)))
 
-    # Add edges from the NetworkX graph to the NetworKit graph
+
+    #with open('graphMain.txt', 'w') as f:
+        # Add edges from the NetworkX graph to the NetworKit graph
     for u, v, data in nx_graph.edges(data=True):
         weight = 1.0  # Default weight if unweighted
         nk_graph.addEdge(node_mapping[u], node_mapping[v], weight)
+            #write to graph
+            #f.write(f"{node_mapping[u]}  {node_mapping[v]}\n")
+
 
     return nk_graph
 
