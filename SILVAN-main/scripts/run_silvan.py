@@ -13,6 +13,7 @@ parser.add_argument("-o", type=str, help="output path (def.=results_silvan.csv o
 parser.add_argument("-t","--type", type=int ,help="type of graph. 1 means directed, 0 undirected (def. undirected)",default=0)
 args = parser.parse_args()
 
+
 delta = args.delta
 file_output_path = "output.txt"
 path_executable = "../silvan/silvan"
