@@ -1,0 +1,495 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{dataset}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=394eb70ade7701e6a2527b2444f62e84}{%
+           family={Freyberg},
+           familyi={F\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{394eb70ade7701e6a2527b2444f62e84}
+      \strng{fullhash}{394eb70ade7701e6a2527b2444f62e84}
+      \strng{bibnamehash}{394eb70ade7701e6a2527b2444f62e84}
+      \strng{authorbibnamehash}{394eb70ade7701e6a2527b2444f62e84}
+      \strng{authornamehash}{394eb70ade7701e6a2527b2444f62e84}
+      \strng{authorfullhash}{394eb70ade7701e6a2527b2444f62e84}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.kaggle.com/datasets/jfreyberg/spotify-artist-feature-collaboration-network}}
+      \field{title}{Spotify Artist Feature Collaboration Network}
+    \endentry
+    \entry{Bonacich2007}{article}{}
+      \name{author}{1}{}{%
+        {{hash=12121ca52ec8a4201d394b3b282a1502}{%
+           family={Bonacich},
+           familyi={B\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{12121ca52ec8a4201d394b3b282a1502}
+      \strng{fullhash}{12121ca52ec8a4201d394b3b282a1502}
+      \strng{bibnamehash}{12121ca52ec8a4201d394b3b282a1502}
+      \strng{authorbibnamehash}{12121ca52ec8a4201d394b3b282a1502}
+      \strng{authornamehash}{12121ca52ec8a4201d394b3b282a1502}
+      \strng{authorfullhash}{12121ca52ec8a4201d394b3b282a1502}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Eigenvectors, and the related centrality measure Bonacich's c(β), have advantages over graph-theoretic measures like degree, betweenness, and closeness centrality: they can be used in signed and valued graphs and the beta parameter in c(β) permits the calculation of power measures for a wider variety of types of exchange. Degree, betweenness, and closeness centralities are defined only for classically simple graphs—those with strictly binary relations between vertices. Looking only at these classical graphs, where eigenvectors and graph–theoretic measures are competitors, eigenvector centrality is designed to be distinctively different from mere degree centrality when there are some high degree positions connected to many low degree others or some low degree positions are connected to a few high degree others. Therefore, it will not be distinctively different from degree when positions are all equal in degree (regular graphs) or in core-periphery structures in which high degree positions tend to be connected to each other.}
+      \field{issn}{0378-8733}
+      \field{journaltitle}{Social Networks}
+      \field{number}{4}
+      \field{title}{Some unique properties of eigenvector centrality}
+      \field{volume}{29}
+      \field{year}{2007}
+      \field{pages}{555\bibrangedash 564}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.socnet.2007.04.002
+      \endverb
+      \keyw{Centrality,Eigenvector}
+    \endentry
+    \entry{Borgatti2006}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e8f0c5371f5fec8f5c568d21e6f983d7}{%
+           family={Borgatti},
+           familyi={B\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f8c10be73e0b94b29dee4ccbc5dd3e7}{%
+           family={Carley},
+           familyi={C\bibinitperiod},
+           given={Kathleen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=528dcfda50e1b99bc5eff9b97094dcb5}{%
+           family={Krackhardt},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1eb7cd62402d620a6df9d61aea94fdb3}
+      \strng{fullhash}{1eb7cd62402d620a6df9d61aea94fdb3}
+      \strng{bibnamehash}{1eb7cd62402d620a6df9d61aea94fdb3}
+      \strng{authorbibnamehash}{1eb7cd62402d620a6df9d61aea94fdb3}
+      \strng{authornamehash}{1eb7cd62402d620a6df9d61aea94fdb3}
+      \strng{authorfullhash}{1eb7cd62402d620a6df9d61aea94fdb3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Social Networks}
+      \field{month}{05}
+      \field{title}{On the Robustness of Centrality Measures Under Conditions of Imperfect Data}
+      \field{volume}{28}
+      \field{year}{2006}
+      \field{pages}{124\bibrangedash 136}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.socnet.2005.05.001
+      \endverb
+    \endentry
+    \entry{Spizzirri2011}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3a8dee77373561c90feea37d058cb65e}{%
+           family={Spizzirri},
+           familyi={S\bibinitperiod},
+           given={Leo},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a8dee77373561c90feea37d058cb65e}
+      \strng{fullhash}{3a8dee77373561c90feea37d058cb65e}
+      \strng{bibnamehash}{3a8dee77373561c90feea37d058cb65e}
+      \strng{authorbibnamehash}{3a8dee77373561c90feea37d058cb65e}
+      \strng{authornamehash}{3a8dee77373561c90feea37d058cb65e}
+      \strng{authorfullhash}{3a8dee77373561c90feea37d058cb65e}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Algebra in Geography: Eigenvectors of Network}
+      \field{title}{Justification and application of eigenvector centrality}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://sites.math.washington.edu/~morrow/336_11/papers/leo.pdf
+      \endverb
+      \verb{url}
+      \verb https://sites.math.washington.edu/~morrow/336_11/papers/leo.pdf
+      \endverb
+    \endentry
+    \entry{Maharani2014}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=ffd9833062832dda49c5b4927a93ca6b}{%
+           family={Maharani},
+           familyi={M\bibinitperiod},
+           given={Warih},
+           giveni={W\bibinitperiod}}}%
+        {{hash=870d543ccf4bb463264c92558db6f044}{%
+           family={Adiwijaya},
+           familyi={A\bibinitperiod}}}%
+        {{hash=05adb5f4b9780a33689e064271e71548}{%
+           family={Gozali},
+           familyi={G\bibinitperiod},
+           given={Alfian\bibnamedelima Akbar},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2fd7551baa35dab018e985622c89e648}
+      \strng{fullhash}{2fd7551baa35dab018e985622c89e648}
+      \strng{bibnamehash}{2fd7551baa35dab018e985622c89e648}
+      \strng{authorbibnamehash}{2fd7551baa35dab018e985622c89e648}
+      \strng{authornamehash}{2fd7551baa35dab018e985622c89e648}
+      \strng{authorfullhash}{2fd7551baa35dab018e985622c89e648}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 8th International Conference on Telecommunication Systems Services and Applications (TSSA)}
+      \field{title}{Degree centrality and eigenvector centrality in twitter}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/TSSA.2014.7065911
+      \endverb
+      \keyw{Social network services;Eigenvalues and eigenfunctions;Weight measurement;Vectors;Media;Entropy;Bibliometrics;Social Network Analysis;degree centrality;eigenvector centrality;SME}
+    \endentry
+    \entry{South2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=43678d891d7c21e2710cfd79e24bc271}{%
+           family={South},
+           familyi={S\bibinitperiod},
+           given={Tobin},
+           giveni={T\bibinitperiod}}}%
+        {{hash=32acfdd2bf0f9102b5ca11d775cec218}{%
+           family={Roughan},
+           familyi={R\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2cb7b9faafc149578cd2fec4a8fc0b46}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Lewis},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{97b89778be2799a6e98e1a022e387b78}
+      \strng{fullhash}{97b89778be2799a6e98e1a022e387b78}
+      \strng{bibnamehash}{97b89778be2799a6e98e1a022e387b78}
+      \strng{authorbibnamehash}{97b89778be2799a6e98e1a022e387b78}
+      \strng{authornamehash}{97b89778be2799a6e98e1a022e387b78}
+      \strng{authorfullhash}{97b89778be2799a6e98e1a022e387b78}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{The modern age of digital music access has increased the availability of data about music consumption and creation, facilitating the large-scale analysis of the complex networks that connect musical works and artists. Data about user streaming behaviour and the musical collaboration networks are particularly important with new data-driven recommendation systems. Here, we present a new collaboration network of artists from the online music streaming service Spotify and demonstrate a critical change in the eigenvector centrality of artists, as low popularity artists are removed. This critical change in centrality, from a central core of classical artists to a core of rap artists, demonstrates deeper structural properties of the network. Both the popularity and degree of collaborators play an important role in the centrality of these groups. Rap artists have dense collaborations with other popular artists whereas classical artists are diversely connected to a large number of low and medium popularity artists throughout the graph through renditions and compilations. A Social Group Centrality model is presented to simulate this critical transition behaviour, and switching between dominant eigenvectors is observed. By contrasting a group of high-degree diversely connected community leaders to a group of celebrities which only connect to high popularity nodes, this model presents a novel investigation into the effect of popularity bias on how centrality and importance are measured.}}
+      \field{issn}{2051-1329}
+      \field{journaltitle}{Journal of Complex Networks}
+      \field{month}{03}
+      \field{number}{6}
+      \field{title}{{Popularity and centrality in Spotify networks: critical transitions in eigenvector centrality}}
+      \field{volume}{8}
+      \field{year}{2021}
+      \field{pages}{cnaa050}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/comnet/cnaa050
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/comnet/cnaa050
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/comnet/cnaa050
+      \endverb
+    \endentry
+    \entry{South2018}{article}{}
+      \name{author}{1}{}{%
+        {{hash=43678d891d7c21e2710cfd79e24bc271}{%
+           family={South},
+           familyi={S\bibinitperiod},
+           given={Tobin},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{43678d891d7c21e2710cfd79e24bc271}
+      \strng{fullhash}{43678d891d7c21e2710cfd79e24bc271}
+      \strng{bibnamehash}{43678d891d7c21e2710cfd79e24bc271}
+      \strng{authorbibnamehash}{43678d891d7c21e2710cfd79e24bc271}
+      \strng{authornamehash}{43678d891d7c21e2710cfd79e24bc271}
+      \strng{authorfullhash}{43678d891d7c21e2710cfd79e24bc271}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Australian Mathematical Sciences Institute}
+      \field{title}{Network analysis of the Spotify artist collaboration graph}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
+      \verb{urlraw}
+      \verb https://vrs.amsi.org.au/wp-content/uploads/sites/84/2018/04/tobin_south_vrs-report.pdf
+      \endverb
+      \verb{url}
+      \verb https://vrs.amsi.org.au/wp-content/uploads/sites/84/2018/04/tobin_south_vrs-report.pdf
+      \endverb
+    \endentry
+    \entry{Holme2002}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6fbf62dda7acce7a201e5324c44e2345}{%
+           family={Holme},
+           familyi={H\bibinitperiod},
+           given={Petter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=113a7e3b341b34d4002c39c451630f98}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Beom\bibnamedelima Jun},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society (APS)}%
+      }
+      \strng{namehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{fullhash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{bibnamehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{authorbibnamehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{authornamehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{authorfullhash}{6261a184546a12d16dfb4f2e0def05fe}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1095-3787}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{1}
+      \field{number}{2}
+      \field{title}{Growing scale-free networks with tunable clustering}
+      \field{volume}{65}
+      \field{year}{2002}
+      \verb{doi}
+      \verb 10.1103/physreve.65.026107
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1103/PhysRevE.65.026107
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1103/PhysRevE.65.026107
+      \endverb
+    \endentry
+    \entry{NetworkX_Centrality}{misc}{}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{title}{NetworkX, centrality algorithms}
+      \verb{urlraw}
+      \verb https://networkx.org/documentation/stable/reference/algorithms/centrality.html
+      \endverb
+      \verb{url}
+      \verb https://networkx.org/documentation/stable/reference/algorithms/centrality.html
+      \endverb
+    \endentry
+    \entry{NetworKit_centrality}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{NetworKit, centrality}
+      \verb{urlraw}
+      \verb https://networkit.github.io/dev-docs/python_api/centrality.html#module-networkit.centrality
+      \endverb
+      \verb{url}
+      \verb https://networkit.github.io/dev-docs/python_api/centrality.html#module-networkit.centrality
+      \endverb
+    \endentry
+    \entry{Chechik2015}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=221f5dac7fd621cfa51cb28e62192432}{%
+           family={Chechik},
+           familyi={C\bibinitperiod},
+           given={Shiri},
+           giveni={S\bibinitperiod}}}%
+        {{hash=537da394ff661487bc4120d6cab00ec5}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Edith},
+           giveni={E\bibinitperiod}}}%
+        {{hash=74fc28f5c63cf11e0fa303a99e5e55a5}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Haim},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{ac7b5aff3a2421c792558749c223bf64}
+      \strng{fullhash}{ac7b5aff3a2421c792558749c223bf64}
+      \strng{bibnamehash}{ac7b5aff3a2421c792558749c223bf64}
+      \strng{authorbibnamehash}{ac7b5aff3a2421c792558749c223bf64}
+      \strng{authornamehash}{ac7b5aff3a2421c792558749c223bf64}
+      \strng{authorfullhash}{ac7b5aff3a2421c792558749c223bf64}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.SI}
+      \field{eprinttype}{arXiv}
+      \field{title}{Average Distance Queries through Weighted Samples in Graphs and Metric Spaces: High Scalability with Tight Statistical Guarantees}
+      \field{year}{2015}
+      \verb{eprint}
+      \verb 1503.08528
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1503.08528
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1503.08528
+      \endverb
+    \endentry
+    \entry{Riondato2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5b99fd49ec12900099bd94ecb24acf46}{%
+           family={Riondato},
+           familyi={R\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=653d8f152447f2feb9792843b6b7b896}{%
+           family={Kornaropoulos},
+           familyi={K\bibinitperiod},
+           given={Evgenios\bibnamedelima M.},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{65789b3cdd11bfc4f1752a1399fd1dc9}
+      \strng{fullhash}{65789b3cdd11bfc4f1752a1399fd1dc9}
+      \strng{bibnamehash}{65789b3cdd11bfc4f1752a1399fd1dc9}
+      \strng{authorbibnamehash}{65789b3cdd11bfc4f1752a1399fd1dc9}
+      \strng{authornamehash}{65789b3cdd11bfc4f1752a1399fd1dc9}
+      \strng{authorfullhash}{65789b3cdd11bfc4f1752a1399fd1dc9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Betweenness centrality is a fundamental measure in social network analysis, expressing the importance or influence of individual vertices (or edges) in a network in terms of the fraction of shortest paths that pass through them. Since exact computation in large networks is prohibitively expensive, we present two efficient randomized algorithms for betweenness estimation. The algorithms are based on random sampling of shortest paths and offer probabilistic guarantees on the quality of the approximation. The first algorithm estimates the betweenness of all vertices (or edges): all approximate values are within an additive factor {\$}{\$}{\backslash}varepsilon {\backslash}in (0,1){\$}{\$}from the real values, with probability at least {\$}{\$}1-{\backslash}delta {\$}{\$}. The second algorithm focuses on the top-K vertices (or edges) with highest betweenness and estimate their betweenness value to within a multiplicative factor {\$}{\$}{\backslash}varepsilon {\$}{\$}, with probability at least {\$}{\$}1-{\backslash}delta {\$}{\$}. This is the first algorithm that can compute such approximation for the top-K vertices (or edges). By proving upper and lower bounds to the VC-dimension of a range set associated with the problem at hand, we can bound the sample size needed to achieve the desired approximations. We obtain sample sizes that are independent from the number of vertices in the network and only depend on a characteristic quantity that we call the vertex-diameter, that is the maximum number of vertices in a shortest path. In some cases, the sample size is completely independent from any quantitative property of the graph. An extensive experimental evaluation on real and artificial networks shows that our algorithms are significantly faster and much more scalable as the number of vertices grows than other algorithms with similar approximation guarantees.}
+      \field{issn}{1573-756X}
+      \field{journaltitle}{Data Mining and Knowledge Discovery}
+      \field{month}{3}
+      \field{number}{2}
+      \field{title}{Fast approximation of betweenness centrality through sampling}
+      \field{volume}{30}
+      \field{year}{2016}
+      \field{pages}{438\bibrangedash 475}
+      \range{pages}{38}
+      \verb{doi}
+      \verb 10.1007/s10618-015-0423-0
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10618-015-0423-0
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10618-015-0423-0
+      \endverb
+    \endentry
+    \entry{SILVAN}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=7cd8058ede9f57c21e793a3d41e49bce}{%
+           family={Pellegrina},
+           familyi={P\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8c5be7770d8cbddf5c4f8d4f08b31b99}{%
+           family={Vandin},
+           familyi={V\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{fullhash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{bibnamehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{authorbibnamehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{authornamehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{authorfullhash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.DS}
+      \field{eprinttype}{arXiv}
+      \field{title}{SILVAN: Estimating Betweenness Centralities with Progressive Sampling and Non-uniform Rademacher Bounds}
+      \field{year}{2022}
+      \verb{eprint}
+      \verb 2106.03462
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2106.03462
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2106.03462
+      \endverb
+    \endentry
+    \entry{NetworKit_globals_clustering}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{NetworKit, global clustering coefficient}
+      \verb{urlraw}
+      \verb https://networkit.github.io/dev-docs/python_api/globals.html#networkit.globals.ClusteringCoefficient
+      \endverb
+      \verb{url}
+      \verb https://networkit.github.io/dev-docs/python_api/globals.html#networkit.globals.ClusteringCoefficient
+      \endverb
+    \endentry
+    \entry{NetworkX_Graph}{misc}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{NetworkX, graph generators}
+      \verb{urlraw}
+      \verb https://networkx.org/documentation/stable/reference/generators.html
+      \endverb
+      \verb{url}
+      \verb https://networkx.org/documentation/stable/reference/generators.html
+      \endverb
+    \endentry
+    \entry{capri}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1e050c9a8504fc08bd7ef7ddcd5098f0}{%
+           family={Padova\bibnamedelimb Strategic\bibnamedelimb Research\bibnamedelimb Infrastructure\bibnamedelimb Grant\bibnamedelima 2017},
+           familyi={P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim 2\bibinitperiod},
+           given={University},
+           giveni={U\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{fullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{bibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authorbibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authornamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authorfullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://capri.dei.unipd.it/}}
+      \field{title}{CAPRI: Calcolo ad Alte Prestazioni per la Ricerca e l'Innovazione}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

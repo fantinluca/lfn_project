@@ -1,0 +1,155 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[12pt,conference]{ieeeconf} %Github
+%\documentclass[letterpaper, 12 pt, onecolumn]{ieeeconf} %Prof. Parallel
+
+% Comment this line out
+                                                          % if you need a4paper
+                                                          \documentclass[a4paper, 12pt, conference]{ieeeconf}      % Use this line for a4
+                                                          % paper
+
+\IEEEoverridecommandlockouts                              % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\overrideIEEEmargins
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows.meta, positioning}
+
+\usepackage{url}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+%\usepackage{algorithm}
+\usepackage{verbatim} 
+%\usepackage[noend]{algpseudocode}
+\usepackage{soul, color}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier} 
+\usepackage{array}
+\usepackage{pgf}
+\usepackage{makecell}
+\usepackage[sorting=none]{biblatex} % For biblatex
+\addbibresource{report1.bib} % Path to your .bib file
+
+\SetNlSty{large}{}{:}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\newcommand{\rework}[1]{\todo[color=yellow,inline]{#1}}
+
+\makeatletter
+\newcommand{\rom}[1]{\romannumeral #1}
+\newcommand{\Rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\pagestyle{plain} 
+
+\title{Comparison of Network Analytics and Significance Analysis on Spotify Artist Feature Collaboration Network\\
+\large Learning From Networks - Project proposal \\}
+
+\author{Fabio Cociancich, Luca Fantin, Alessandro Lincetto % <-this % stops a space 
+\\\\ Master Degree in Computer Engineering - University of Padova \\
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
+
+\section{Motivation} 
+
+Nowadays, Spotify is one of the most popular music streaming services in the world. As such, analyzing its usage data can reveal interesting information about music trends. In this project, we focus our analysis on the detection of the most popular artists, see how its results change when considering only certain genres and popularity levels, determine how closely connected the artists are and whether our findings can be considered interesting.
+
+\section{Dataset}
+
+We will consider a graph where nodes correspond to artists and edges connect artists who have collaborated on at least one song. In particular, the dataset we intend to use for this project is the Spotify Artist Feature Collaboration Network from Kaggle \cite{dataset}. This graph has 156.422 nodes, which include around 20,000 artists who appeard in the Spotify weekly charts and around 136,000 artists who had at least one feature with the chart artists, and 300,387 edges between them. The information included with the nodes allow for the analyses suggested above:
+\begin{itemize}
+    \item number of followers, according to the Spotify API
+    \item artist popularity, expressed as an integer number between 0 and 100 (100 corresponding to the most popular artist on the service), according to the Spotify API
+    \item list of genres, according to the Spotify API
+    \item list showing the number of Spotify chart hits in different countries, according to the data collected by \href{kworb.net}{kworb.net}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Method}
+
+To achieve out targets, our work is divided in two phases. The first one consists of the computation of several network analytics. On one hand, we will compare the centrality measures presented during the lectures (closeness, betweenness, PageRank) with \emph{eigenvector centrality}. The latter is built on the intuition that a node is important if it is connected to other important nodes. Given a graph $G=(V,E)$, let us define $\textbf{x}\in\mathbb{R}^{|V|}$ the vector of the centrality values for all nodes in $G$, $A$ the adjacency matrix of $G$ and $\lambda\neq 0$ a constant. For any node $i$ we can write: $$x_i=\frac{1}{\lambda}\sum_{j=1}^{|V|}A_{i,j}x_j \quad \rightarrow \quad Ax=\lambda x$$
+The mathematical representation of the intuition can thus be reformulated as finding the eigenvector of the adjacency matrix corresponding to the eigenvalue $\lambda$; such vector includes the values of the eigenvector centrality for all nodes. This centrality measure has been studied extensively \cite{Bonacich2007} \cite{Borgatti2006} \cite{Spizzirri2011}, also in the context of social media network analysis \cite{Maharani2014}, including Spotify \cite{South2021} \cite{South2018}. Furthermore, we want to compute these measures on subgraphs of the whole network, considering only certain music genres and popularity threshold.
+
+A similar analysis will be done for the clustering coefficients. We will compute its values for the whole graph and for the aforementioned subgraphs.
+
+The second part of our work will consist of statistical hypothesis testing on the node analytics computed on our graph against those computed on a series of random graphs. We intend to generate them with the \emph{Holme-Kim algorithm} \cite{Holme2002}. This model resembles real-world networks, such as social networks, more closely than the traditional Erd\H{o}s-R\'{e}nyi model. Instead of assuming a fixed number of nodes and uniform distribution for the probabilities of adding new edges, this new model starts from a certain number of nodes, iteratively adds new nodes and connects them with already existing nodes with a distribution that favours nodes with an already high degree. This allows the resulting graph to achieve a power-law distribution of the degrees: as we consider higher degrees, the number of nodes with such degree decreases exponentially. Such characteristic is observed in many real-world networks, thus we expect it to arise in our Spotify artists' graph as well. Furthermore, this model produces graphs with higher, tunable clustering coefficients by creating additional edges: once a newly created node $v$ is connected to an existing one $w$, a new edge is created between $v$ and one of the neighbours of $w$.
+
+Further investigation will be needed to determine if and how we need to fix node features such as genre and popularity level when generating the random graphs.
+
+% idee: degree sequence, aggiungere generi + popolarità
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{implementation}
+%  centrality measures
+The programs needed for our analyses will be implemented in Python. For the centrality measures we will use the implementations available at NetworkX package \cite{NetworkX_Centrality} which contains methods for computing various centrality measures such as closeness, betweenness, eigenvector and PageRank. 
+
+
+%  approximate solutions  TODO
+% closeness centrality  -> Eppstein-Wang alg.
+%                       -> Checkin-Cohen-Kaplan algorithm  (maybe better this)   --- networkit
+For the approximate algorithms we will use the NetworKit package \cite{NetworKit_centrality}. Some methods are available, such as the approximate Checkin-Cohen-Kaplan algorithm for the closeness centrality \cite{Chechik2015} and the approximation algorithm for betweenness centrality developed by Riondato and Kornaropoulos \cite{Riondato2016}.
+% SILVAN
+Another betweenness centrality approximate algorithm is SILVAN, developed by Leonardo Pellegrina and Fabio Vandin. \cite{SILVAN}
+% clustering coefficient
+
+The NetworKit package will also be used for evaluating the global clustering coefficients, with both exact and approximate algorithms. \cite{NetworKit_globals_clustering}
+
+
+% random graph generators
+The NetworkX package will also be used for the graph generators \cite{NetworkX_Graph}. There is a specified method for generating models using the Holme-Kim algorithm.
+
+\section{Machines}
+
+Our programs will be executed on our local machines. They all employ AMD Ryzen 5/7 CPUs and RAMs ranging from 8 GBs and 24 GBs. We will also investigate the possibility to execute them on the CAPRI High-Performance Computing (HPC) system \cite{capri}. This system features the following hardware:
+\begin{itemize}
+    \item 16 Intel(R) Xeon(R) Gold 6130 @ 2.10GHz CPUs
+    \item 6 TB DDR4 RAM
+    \item 2 NVIDIA Tesla P100 16GB GPUs
+    \item 40 TB of disk space
+\end{itemize}
+
+% computer Sheldon: Processore	AMD Ryzen 5 4500U with Radeon Graphics 2.38 GHz; RAM installata 8,00 GB (7,37 GB utilizzabile) Sistema operativo a 64 bit
+% computer Fabio : Processore AMD Ryzen 7 5700U with Radeon Graphics 1.80 GHz, 24 GB RAM, SO 64 bit
+
+
+
+\section*{Contributions}
+
+For this proposal, Fabio Cociancich and Alessandro Lincetto researched and conducted the first tests with the Python packages, and wrote the related "Implementation" section. This can be quantified as 30\% of the work for each of them. Luca Fantin wrote instead the rest of the proposal and researched the dataset, the eigenvector centrality measure and the Holme-Kim random graph model. This can be quantified as 40\% of the work.
+
+
+
+%\addtolength{\textheight}{-5cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography[nottype=online]
+\end{document}
