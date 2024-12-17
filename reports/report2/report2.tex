@@ -40,7 +40,7 @@
 \usepackage{pgf}
 \usepackage{makecell}
 \usepackage[sorting=none]{biblatex} % For biblatex
-\addbibresource{report1.bib} % Path to your .bib file
+\addbibresource{../reports.bib} % Path to your .bib file
 
 \SetNlSty{large}{}{:}
 
@@ -73,7 +73,9 @@
 
 
 
-Ciao
+\section{Experiments}
+
+We have determined the feasibility of performing our experiments on the CAPRI cluster \cite{capri}. The project repository can be cloned and the necessary Python packages can be installed on our own profile, making it easy to efficiently translate the code development done on our own machines into this testing environment. For any computation, we will submit our jobs to the cluster via the SLURM work scheduler. This allows us to exploit the full computational power of CAPRI while also keeping track of execution time and resource usage.
 
 
 

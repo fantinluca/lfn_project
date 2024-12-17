@@ -1,0 +1,48 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{capri}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1e050c9a8504fc08bd7ef7ddcd5098f0}{%
+           family={Padova\bibnamedelimb Strategic\bibnamedelimb Research\bibnamedelimb Infrastructure\bibnamedelimb Grant\bibnamedelima 2017},
+           familyi={P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim 2\bibinitperiod},
+           given={University},
+           giveni={U\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{fullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{bibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authorbibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authornamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authorfullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://capri.dei.unipd.it/}}
+      \field{title}{CAPRI: Calcolo ad Alte Prestazioni per la Ricerca e l'Innovazione}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
