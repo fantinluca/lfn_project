@@ -42,6 +42,80 @@
       \field{howpublished}{\url{https://capri.dei.unipd.it/}}
       \field{title}{CAPRI: Calcolo ad Alte Prestazioni per la Ricerca e l'Innovazione}
     \endentry
+    \entry{ShapiroWilk1965}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d68649e4f2a1a671378e6b8133ccb0d3}{%
+           family={Shapiro},
+           familyi={S\bibinitperiod},
+           given={S.\bibnamedelimi S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=4804e1730322ac9acf50f7acded4b705}{%
+           family={Wilk},
+           familyi={W\bibinitperiod},
+           given={M.\bibnamedelimi B.},
+           giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {[Oxford University Press, Biometrika Trust]}%
+      }
+      \strng{namehash}{c79429df467595c7a5a1ca33b7d909f2}
+      \strng{fullhash}{c79429df467595c7a5a1ca33b7d909f2}
+      \strng{bibnamehash}{c79429df467595c7a5a1ca33b7d909f2}
+      \strng{authorbibnamehash}{c79429df467595c7a5a1ca33b7d909f2}
+      \strng{authornamehash}{c79429df467595c7a5a1ca33b7d909f2}
+      \strng{authorfullhash}{c79429df467595c7a5a1ca33b7d909f2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00063444, 14643510}
+      \field{journaltitle}{Biometrika}
+      \field{number}{3/4}
+      \field{title}{An Analysis of Variance Test for Normality (Complete Samples)}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{52}
+      \field{year}{1965}
+      \field{urldateera}{ce}
+      \field{pages}{591\bibrangedash 611}
+      \range{pages}{21}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2333709
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2333709
+      \endverb
+    \endentry
+    \entry{RazaliYap2011}{article}{}
+      \name{author}{2}{}{%
+        {{hash=394acd928874caf36669041288119c18}{%
+           family={Mohd\bibnamedelima Razali},
+           familyi={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Nornadiah},
+           giveni={N\bibinitperiod}}}%
+        {{hash=19c376e2b541223551018acf4888bb98}{%
+           family={Yap},
+           familyi={Y\bibinitperiod},
+           given={Bee},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c8b92b20b3feea86ca005ea2cb74ace}
+      \strng{fullhash}{8c8b92b20b3feea86ca005ea2cb74ace}
+      \strng{bibnamehash}{8c8b92b20b3feea86ca005ea2cb74ace}
+      \strng{authorbibnamehash}{8c8b92b20b3feea86ca005ea2cb74ace}
+      \strng{authornamehash}{8c8b92b20b3feea86ca005ea2cb74ace}
+      \strng{authorfullhash}{8c8b92b20b3feea86ca005ea2cb74ace}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Stat. Model. Analytics}
+      \field{month}{01}
+      \field{title}{Power Comparisons of Shapiro-Wilk, Kolmogorov-Smirnov, Lilliefors and Anderson-Darling Tests}
+      \field{volume}{2}
+      \field{year}{2011}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
