@@ -4,7 +4,7 @@ import networkx as nx
 import random
 
 # Gets the current directory where the script is located
-current_dir = os.path.dirname(__file__)
+current_dir = os.path.dirname(os.path.dirname(__file__)) + "\dataset"
 
 # Builds full paths to .csv files within the current directory
 nodes_path = os.path.join(current_dir, 'nodes.csv')
