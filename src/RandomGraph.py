@@ -11,14 +11,14 @@ nodes_path = os.path.join(current_dir, 'nodes.csv')
 edges_path = os.path.join(current_dir, 'edges.csv')
 
 # Load the entire CSV files (without row limit)
-os.system('cls')
+#os.system('cls')
 print("Loading nodes and edges CSV files...")
 nodes_df = pd.read_csv(nodes_path)  # Without limit
 edges_df = pd.read_csv(edges_path)  # Without limit
 print("CSV files loaded successfully.")
 
 # Create the Graph from the real dataset
-os.system('cls')
+#os.system('cls')
 print("Creating the real graph from the dataset...")
 G = nx.Graph()
 
@@ -27,14 +27,14 @@ for index, row in nodes_df.iterrows():
     G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
                popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
     if index % 100 == 0:  # Print progress every 100 nodes
-        os.system('cls')
+        #os.system('cls')
         print(f"Adding node {index+1}/{len(nodes_df)}")
 
 # Add edges to the graph
 for index, row in edges_df.iterrows():
     G.add_edge(row['id_0'], row['id_1'])
     if index % 100 == 0:  # Print progress every 100 edges
-        os.system('cls')
+        #os.system('cls')
         print(f"Adding edge {index+1}/{len(edges_df)}")
 
 print(f"Real graph created with {len(G.nodes())} nodes and {len(G.edges())} edges.")
