@@ -4,7 +4,7 @@ import networkx as nx
 import random
 
 # Gets the current directory where the script is located
-current_dir = os.path.dirname(os.path.dirname(__file__)) + "\dataset"
+current_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "dataset")
 
 # Builds full paths to .csv files within the current directory
 nodes_path = os.path.join(current_dir, 'nodes.csv')
@@ -13,6 +13,7 @@ edges_path = os.path.join(current_dir, 'edges.csv')
 # Load the entire CSV files (without row limit)
 os.system('cls')
 print("Loading nodes and edges CSV files...")
+print(current_dir)
 nodes_df = pd.read_csv(nodes_path)  # Without limit
 edges_df = pd.read_csv(edges_path)  # Without limit
 print("CSV files loaded successfully.")
