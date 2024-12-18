@@ -3,6 +3,8 @@ import os
 import networkx as nx
 import networkit as nk
 
+from read_real_graph import create_graph_networkit, create_graph_networkx
+
 
 def convert_to_networkit(nx_graph):
     node_mapping = {node: i for i, node in enumerate(nx_graph.nodes())}
@@ -31,40 +33,7 @@ def convert_to_networkit(nx_graph):
     return nk_graph
 
 
-
-
-# Gets the current directory where the script is located
-current_dir = os.path.dirname(__file__)
-current_dir = current_dir.replace("src", "dataset")
-
-# Builds full paths to .csv files within the current directory
-nodes_path = os.path.join(current_dir, 'nodes.csv')
-edges_path = os.path.join(current_dir, 'edges.csv')
-
-# Upload CSV files using paths relative to the current directory, limited to a subset of rows
-nodes_df = pd.read_csv(nodes_path)#, nrows=1000)  #limite 1.000 nodi
-edges_df = pd.read_csv(edges_path)#, nrows=1000)  #limite 1.000 edges
-
-''''
-print("Colonne di nodes.csv:", nodes_df.columns)
-
-print("Prime 20 righe di nodes.csv:")
-print(nodes_df.head(20))
-
-print("\nPrime 20 righe di edges.csv:")
-print(edges_df.head(20))
-'''
-# Create Graph
-G = nx.Graph()
-
-# Add nodes on the graph
-for index, row in nodes_df.iterrows():
-    G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
-               popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
-
-# Add edges on the graph (limited to the first 10,000 edges)
-for index, row in edges_df.iterrows():
-    G.add_edge(row['id_0'], row['id_1'])
+G = create_graph_networkx()
 
 # Centrality Measures and display top 10 nodes for each
 # Degree Centrality
