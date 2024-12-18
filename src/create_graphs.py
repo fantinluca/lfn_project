@@ -27,7 +27,7 @@ def get_size():
 
     return len(nodes_df)
 
-def create_graph_networkx():
+def create_graph_nx():
 
     nodes_df, edges_df = read_dataset()
 
@@ -45,7 +45,27 @@ def create_graph_networkx():
 
     return G
 
-def create_graph_networkit():
+def nx2nk(nx_graph):
 
-    #nodes_df, edges_df = read_dataset()
-    pass
+    node_mapping = {node: i for i, node in enumerate(nx_graph.nodes())}
+    # Initialize an empty networkit graph
+    nk_graph = nk.graph.Graph(n=len(node_mapping), weighted=False)
+    
+    # Create a new attribute named 'nameAtt' of type 'str'
+    global nameAtt
+    nameAtt = nk_graph.attachNodeAttribute("name", str)
+
+    for node in nx_graph.nodes():
+        nameAtt[node_mapping[node]] = str(nx_graph.nodes[node].get('name', str(node)))
+
+
+    #with open('graphMain.txt', 'w') as f:
+        # Add edges from the NetworkX graph to the NetworKit graph
+    for u, v, data in nx_graph.edges(data=True):
+        weight = 1.0  # Default weight if unweighted
+        nk_graph.addEdge(node_mapping[u], node_mapping[v], weight)
+            #write to graph
+            #f.write(f"{node_mapping[u]}  {node_mapping[v]}\n")
+
+
+    return nk_graph
