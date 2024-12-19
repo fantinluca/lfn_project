@@ -8,7 +8,6 @@ import re
 
 def convert_to_networkit(nx_graph):
     node_mapping = {node: i for i, node in enumerate(nx_graph.nodes())}
-    #print (node_mapping)
     # Initialize an empty networkit graph
     nk_graph = nk.graph.Graph(n=len(node_mapping), weighted=False)
     
@@ -19,12 +18,14 @@ def convert_to_networkit(nx_graph):
     for node in nx_graph.nodes():
         nameAtt[node_mapping[node]] = str(nx_graph.nodes[node].get('name', str(node)))
 
-
+    # the commented code can create a graph suitable for the SILVAN algorithm
+    #with open('subGraph.txt', 'w') as f:
     # Add edges from the NetworkX graph to the NetworKit graph
     for u, v, data in nx_graph.edges(data=True):
         weight = 1.0  # Default weight if unweighted
         nk_graph.addEdge(node_mapping[u], node_mapping[v], weight)
         #attName[node_mapping[u]] = G.nodes[u]['name']
+        #f.write(f"{node_mapping[u]}  {node_mapping[v]}\n")
 
     return nk_graph
 

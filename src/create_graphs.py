@@ -59,6 +59,7 @@ def nx2nk(nx_graph):
         nameAtt[node_mapping[node]] = str(nx_graph.nodes[node].get('name', str(node)))
 
 
+    # the commented code can create a graph suitable for the SILVAN algorithm
     #with open('graphMain.txt', 'w') as f:
         # Add edges from the NetworkX graph to the NetworKit graph
     for u, v, data in nx_graph.edges(data=True):
