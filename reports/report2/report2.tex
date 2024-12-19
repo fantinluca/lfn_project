@@ -76,6 +76,7 @@
 \section{Experiments}
 
 We have determined the feasibility of performing our experiments on the CAPRI cluster \cite{capri}. The project repository can be cloned and the necessary Python packages can be installed on our own profile, making it easy to efficiently translate the code development done on our own machines into this testing environment. For any computation, we will submit our jobs to the cluster via the SLURM work scheduler. This allows us to exploit the full computational power of CAPRI while also keeping track of execution time and resource usage.
+Our first tests have determined that computing all exact metrics on the real graph, as well as on random graphs of the same size, requires a large amount of time. Thus, we intend to computer all metrics on the real graph and then perform less expensive computation on the random graphs, either by using only approximate algorithms or by generating graphs with the same size as the genre-specific subgraphs.
 
 \section{Statistical hypothesis testing}
 
