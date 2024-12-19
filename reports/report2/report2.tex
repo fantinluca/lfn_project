@@ -85,6 +85,12 @@ Our statistical hypothesis testing procedure will comprise of two steps. Any sta
 \section{Random Graph implementation}
 In the implemented code, random graphs are generated using the \texttt{powerlaw\_cluster\_graph} function from the \texttt{networkx} library. This function creates random graphs with a power-law degree distribution and clustering, resembling real-world networks. The number of nodes in the random graphs is specified by a parameter, and the structure of the graph is controlled by two parameters: one that specifies how many edges are added for each new node, and another that sets the probability of adding clustering (triangles). The code generates multiple random graphs, calculates centrality metrics such as degree, closeness, betweenness, PageRank, and eigenvector centrality, and stores the results in a CSV file for further analysis.
 
+\section{Subrgraphs creation and analysis}
+In the implemented code, subgraphs are being generated with \texttt{networkx} and \texttt{networkit} packages.
+In \texttt{subgraphGenre.py} a subgraph is computed by considering only the nodes which represent artists of a certaing musical genre. The subgraph is being created by considering only the existing edges between those nodes.
+The code computes degree, closeness,  betweenness, PageRank, eigenvector centrality, local, global and approx global clustering coefficient.
+It also stores the subgraph in a suitable file in order to be analyzed with the SILVAN algorithm.
+
 \section*{Contributions}
 
 Out of the work presented in this report, Fabio Cociancich wrote the Python scripts to extract the subgraphs based on genre and artists and the scripts to analyze the centrality of a graph.
