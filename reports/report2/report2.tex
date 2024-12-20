@@ -71,29 +71,26 @@
 \thispagestyle{plain}
 \pagestyle{plain}
 
+\section{Random graph implementation}
+We have implementeda a script generating random graphs using the \texttt{powerlaw\_cluster\_graph} function from the \texttt{networkx} library \cite{NetworkX_Graph}. This function creates random graphs following the Holme-Kim model \cite{Holme2002} with a power-law degree distribution and clustering, resembling real-world networks. The number of nodes in the random graphs is specified by a parameter, and the structure of the graph is controlled by two more parameters: the number of edges created for each new node added to the graph, and the probability of adding triangles involving the newly added nodes. The code generates multiple random graphs, calculates several metrics such as centrality measures and clustering coefficients, and stores the results in a CSV file for further analysis.
 
-
-\section{Experiments}
-
-We have determined the feasibility of performing our experiments on the CAPRI cluster \cite{capri}. The project repository can be cloned and the necessary Python packages can be installed on our own profile, making it easy to efficiently translate the code development done on our own machines into this testing environment. For any computation, we will submit our jobs to the cluster via the SLURM work scheduler. This allows us to exploit the full computational power of CAPRI while also keeping track of execution time and resource usage.
-Our first tests have determined that computing all exact metrics on the real graph, as well as on random graphs of the same size, requires a large amount of time. Thus, we intend to computer all metrics on the real graph and then perform less expensive computation on the random graphs, either by using only approximate algorithms or by generating graphs with the same size as the genre-specific subgraphs.
+\section{Subgraph creation and analysis}
+In our implementation, subgraphs are being computed with \texttt{networkx} and \texttt{networkit} packages.
+Until now we have computed subgraphs considering only the nodes which represent artists of a certaing musical genre and only the existing edges between those nodes. The code computes degree, closeness, betweenness, PageRank and eigenvector centrality, local, global and approximate global clustering coefficient. It also stores the subgraph in a suitable file in order to be analyzed with the SILVAN algorithm \cite{SILVAN}, which is implemented in a separate script.
 
 \section{Statistical hypothesis testing}
 
 Our statistical hypothesis testing procedure will comprise of two steps. Any statistical test assumes that the considered population has a known distribution, most often a Gaussian one. Because of the specificity of our definition of random graph, instead of analytically computing the distribution \emph{a priori} of the centrality metrics of our model, the first step will compute how similar this distribution is compared to a Gaussian distribution starting from the features computed on the actual generated graphs, through a \emph{normality test}. We will use Shapiro-Wilk test \cite{ShapiroWilk1965}, since it is considered the most powerful normality test available \cite{RazaliYap2011}. The second step will actually determine how likely it is for the features computed on the real graph to have been drawn from the same distributions as the random graph. The available tests will be determined by the output of the first step.
 
-\section{Random Graph implementation}
-In the implemented code, random graphs are generated using the \texttt{powerlaw\_cluster\_graph} function from the \texttt{networkx} library. This function creates random graphs with a power-law degree distribution and clustering, resembling real-world networks. The number of nodes in the random graphs is specified by a parameter, and the structure of the graph is controlled by two parameters: one that specifies how many edges are added for each new node, and another that sets the probability of adding clustering (triangles). The code generates multiple random graphs, calculates centrality metrics such as degree, closeness, betweenness, PageRank, and eigenvector centrality, and stores the results in a CSV file for further analysis.
+\section{Experiments}
 
-\section{Subrgraphs creation and analysis}
-In the implemented code, subgraphs are being generated with \texttt{networkx} and \texttt{networkit} packages.
-In \texttt{subgraphGenre.py} a subgraph is computed by considering only the nodes which represent artists of a certaing musical genre. The subgraph is being created by considering only the existing edges between those nodes.
-The code computes degree, closeness,  betweenness, PageRank, eigenvector centrality, local, global and approx global clustering coefficient.
-It also stores the subgraph in a suitable file in order to be analyzed with the SILVAN algorithm.
+We have determined the feasibility of performing our experiments on the CAPRI cluster \cite{capri}. The project repository can be cloned and the necessary Python packages can be installed on our own profile, making it easy to efficiently translate the code development done on our own machines into this testing environment. For any computation, we will submit our jobs to the cluster via the SLURM work scheduler. This allows us to exploit the full computational power of CAPRI while also keeping track of execution time and resource usage.
+
+We performed some early tests, executing the code for random graph generation and analysis on the cluster. We have seen that computing all exact metrics on random graphs of the same size as the real-world graph, requires a large amount of time. Thus, we intend to computer all metrics on the real graph only and then perform less expensive computation on the random graphs, either by using only approximate algorithms or by generating graphs with the same size as the genre-specific subgraphs.
 
 \section*{Contributions}
 
-Out of the work presented in this report, Fabio Cociancich wrote the Python scripts to extract the subgraphs based on genre and artists and the scripts to analyze the centrality of a graph.
+Out of the work presented in this report, Fabio Cociancich wrote the Python scripts to extract the subgraphs based on genre and artists and the scripts to compute the metrics of a graph.
 Alessandro Lincetto wrote the script to generate random graphs and compute their metrics, and Luca Fantin investigated how to use the CAPRI cluster and the statistical tests to use, as well as performing an early refactoring of our code. In addition, each of the members wrote the section related to their work, except for the refactoring. The percentage of work done can thus be estimated in 35\%, 20\% and 45\% respectively.
 
 %\addtolength{\textheight}{-5cm}   % This command serves to balance the column lengths

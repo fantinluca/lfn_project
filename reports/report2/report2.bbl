@@ -19,28 +19,97 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{capri}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=1e050c9a8504fc08bd7ef7ddcd5098f0}{%
-           family={Padova\bibnamedelimb Strategic\bibnamedelimb Research\bibnamedelimb Infrastructure\bibnamedelimb Grant\bibnamedelima 2017},
-           familyi={P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim 2\bibinitperiod},
-           given={University},
-           giveni={U\bibinitperiod},
-           prefix={of},
-           prefixi={o\bibinitperiod}}}%
-      }
-      \strng{namehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
-      \strng{fullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
-      \strng{bibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
-      \strng{authorbibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
-      \strng{authornamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
-      \strng{authorfullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+    \entry{NetworkX_Graph}{misc}{}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{NetworkX, graph generators}
+      \verb{urlraw}
+      \verb https://networkx.org/documentation/stable/reference/generators.html
+      \endverb
+      \verb{url}
+      \verb https://networkx.org/documentation/stable/reference/generators.html
+      \endverb
+    \endentry
+    \entry{Holme2002}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6fbf62dda7acce7a201e5324c44e2345}{%
+           family={Holme},
+           familyi={H\bibinitperiod},
+           given={Petter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=113a7e3b341b34d4002c39c451630f98}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Beom\bibnamedelima Jun},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society (APS)}%
+      }
+      \strng{namehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{fullhash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{bibnamehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{authorbibnamehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{authornamehash}{6261a184546a12d16dfb4f2e0def05fe}
+      \strng{authorfullhash}{6261a184546a12d16dfb4f2e0def05fe}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://capri.dei.unipd.it/}}
-      \field{title}{CAPRI: Calcolo ad Alte Prestazioni per la Ricerca e l'Innovazione}
+      \field{issn}{1095-3787}
+      \field{journaltitle}{Physical Review E}
+      \field{month}{1}
+      \field{number}{2}
+      \field{title}{Growing scale-free networks with tunable clustering}
+      \field{volume}{65}
+      \field{year}{2002}
+      \verb{doi}
+      \verb 10.1103/physreve.65.026107
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1103/PhysRevE.65.026107
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1103/PhysRevE.65.026107
+      \endverb
+    \endentry
+    \entry{SILVAN}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=7cd8058ede9f57c21e793a3d41e49bce}{%
+           family={Pellegrina},
+           familyi={P\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8c5be7770d8cbddf5c4f8d4f08b31b99}{%
+           family={Vandin},
+           familyi={V\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{fullhash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{bibnamehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{authorbibnamehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{authornamehash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \strng{authorfullhash}{f9bf15ab65d43b3c33202de35fbb54ab}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.DS}
+      \field{eprinttype}{arXiv}
+      \field{title}{SILVAN: Estimating Betweenness Centralities with Progressive Sampling and Non-uniform Rademacher Bounds}
+      \field{year}{2022}
+      \verb{eprint}
+      \verb 2106.03462
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2106.03462
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2106.03462
+      \endverb
     \endentry
     \entry{ShapiroWilk1965}{article}{}
       \name{author}{2}{}{%
@@ -64,8 +133,8 @@
       \strng{authorbibnamehash}{c79429df467595c7a5a1ca33b7d909f2}
       \strng{authornamehash}{c79429df467595c7a5a1ca33b7d909f2}
       \strng{authorfullhash}{c79429df467595c7a5a1ca33b7d909f2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{00063444, 14643510}
@@ -106,8 +175,8 @@
       \strng{authorbibnamehash}{8c8b92b20b3feea86ca005ea2cb74ace}
       \strng{authornamehash}{8c8b92b20b3feea86ca005ea2cb74ace}
       \strng{authorfullhash}{8c8b92b20b3feea86ca005ea2cb74ace}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{J. Stat. Model. Analytics}
@@ -115,6 +184,29 @@
       \field{title}{Power Comparisons of Shapiro-Wilk, Kolmogorov-Smirnov, Lilliefors and Anderson-Darling Tests}
       \field{volume}{2}
       \field{year}{2011}
+    \endentry
+    \entry{capri}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1e050c9a8504fc08bd7ef7ddcd5098f0}{%
+           family={Padova\bibnamedelimb Strategic\bibnamedelimb Research\bibnamedelimb Infrastructure\bibnamedelimb Grant\bibnamedelima 2017},
+           familyi={P\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim 2\bibinitperiod},
+           given={University},
+           giveni={U\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{fullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{bibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authorbibnamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authornamehash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \strng{authorfullhash}{1e050c9a8504fc08bd7ef7ddcd5098f0}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://capri.dei.unipd.it/}}
+      \field{title}{CAPRI: Calcolo ad Alte Prestazioni per la Ricerca e l'Innovazione}
     \endentry
   \enddatalist
 \endrefsection
