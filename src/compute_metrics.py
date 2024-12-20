@@ -16,47 +16,60 @@ def compute_all_metrics(nx_graph):
         "clustering_coefficient": [],
     }
 
+    starting_time = time()
     connected_components = list(nx.connected_components(nx_graph))
     num_connected_components = len(connected_components)
-    print(f"Number of connected components computed")
+    print(f"Number of connected components computed in {time()-starting_time} seconds")
 
     # --- Calculate Average Clustering Coefficient ---
+    starting_time = time()
     avg_clustering_coefficient = nx.average_clustering(nx_graph)
-    print(f"Average clustering coefficient computed")
+    print(f"Average clustering coefficient computed in {time()-starting_time} seconds")
 
     # --- Calculate Centrality Metrics ---
     # Degree Centrality
+    starting_time = time()
     degree_centrality = nx.degree_centrality(nx_graph)
-    print(f"Degree centralities calculated.")
+    print(f"Degree centralities computed in {time()-starting_time} seconds")
 
     # Closeness Centrality
+    starting_time = time()
     closeness_centrality = nx.closeness_centrality(nx_graph)
-    print(f"Closeness centralities calculated.")
+    print(f"Closeness centralities computed in {time()-starting_time} seconds")
 
     # Betweenness Centrality
+    starting_time = time()
     betweenness_centrality = nx.betweenness_centrality(nx_graph)
-    print(f"Betweenness centralities calculated.")
+    print(f"Betweenness centralities computed in {time()-starting_time} seconds")
 
     # PageRank
+    starting_time = time()
     pagerank_centrality = nx.pagerank(nx_graph)
-    print(f"PageRank centralities calculated.")
+    print(f"PageRank centralities computed in {time()-starting_time} seconds")
 
     # Eigenvector Centrality
+    starting_time = time()
     eigenvector_centrality = nx.eigenvector_centrality(nx_graph, max_iter=1000, tol=1e-06)
-    print(f"Eigenvector centralities calculated.")
+    print(f"Eigenvector centralities computed in {time()-starting_time} seconds")
 
     nk_graph = nx2nk(nx_graph)
 
     # Local clustering coefficient
+    starting_time = time()
     clust_coeff = nk.centrality.LocalClusteringCoefficient(nk_graph)
     clust_coeff.run()
     clustering_coefficients = clust_coeff.scores()
+    print(f"Clustering coefficients computed in {time()-starting_time} seconds")
 
     # global clustering coefficient
+    starting_time = time()
     global_clustering_coefficient = nk.globals.ClusteringCoefficient.exactGlobal(nk_graph)
+    print(f"Global clustering coefficient computed in {time()-starting_time} seconds")
 
     # approximate clustering coefficient
+    starting_time = time()
     global_clustering_coefficient_approx = nk.globals.ClusteringCoefficient.approxGlobal(nk_graph, trials = 10000)
+    print(f"Approximate global clustering coefficient computed in {time()-starting_time} seconds")
 
     # --- Collect Metrics ---
     nodes = nx_graph.nodes()

@@ -9,7 +9,7 @@ starting_time = int(str(time()).replace(".",""))
 
 # --- Generate Random Graphs and Calculate Metrics ---
 # Parameters for the Power Law Clustered Graph
-n =  create_graphs.get_size() # Number of nodes (1/50 of the real graph)
+n = 10 # Number of nodes (1/50 of the real graph)
 m = 2  # Number of edges to add for each new node
 p = 0.3  # Clustering probability
 
