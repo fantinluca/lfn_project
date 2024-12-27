@@ -1,4 +1,5 @@
 from subgraphPopularity import createPopularityThreshGraph
+from subgraphGenre import createGenreGraph
 import os
 import pandas as pd
 
@@ -30,3 +31,8 @@ print(f"Number of nodes: {G.number_of_nodes()}")
 print(f"Number of edges: {G.number_of_edges()}")
 
 
+genre = "hip hop"
+K = createGenreGraph (nodes_df, edges_df, genre)
+# Print the number of nodes and edges
+print(f"Number of nodes: {K.number_of_nodes()}")
+print(f"Number of edges: {K.number_of_edges()}")
