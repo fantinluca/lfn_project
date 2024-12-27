@@ -3,7 +3,7 @@ import os
 import networkx as nx
 import networkit as nk
 
-from read_real_graph import create_graph_networkit, create_graph_networkx
+from create_graphs import create_graph_networkit, create_graph_networkx
 
 
 def convert_to_networkit(nx_graph):
