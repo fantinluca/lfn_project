@@ -53,6 +53,25 @@ def createGenreGraph (nodes_df, edges_df, genre):
     return G
 
 
+def createPopularityThreshGraph (nodes_df, edges_df, popularityTh):
+    # Create Graph
+    G = nx.Graph()
+
+    # Add nodes on the graph
+    for index, row in nodes_df.iterrows():
+        # a node will be added only if it's more popular than the threshold
+        if ( row['popularity'] > popularityTh  ):
+            G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
+                popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
+
+    # Add edges on the graph
+    for index, row in edges_df.iterrows():
+        # add the edge only if both nodes are in the graph
+        if ( row['id_0'] in G and row['id_1'] in G ):
+            G.add_edge(row['id_0'], row['id_1'])
+    
+    return G
+
 # -------------------------------------------------------------------------------
 
 # Code below will only execute if this file is run directly (and not from other files)
