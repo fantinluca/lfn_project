@@ -4,6 +4,13 @@ import networkx as nx
 import networkit as nk
 
 def read_dataset():
+    """
+    Reads file of real graph dataset and returns nodes and edges
+
+    Returns:
+        pandas dataframe containing nodes of real graph
+        pandas dataframe containing edges of real graph
+    """
     # Gets the current directory where the script is located
     current_dir = os.path.dirname(__file__)
     current_dir = current_dir.replace("src", "dataset")
@@ -19,7 +26,9 @@ def read_dataset():
     return nodes_df, edges_df
 
 def get_size():
-    
+    """
+    Get size of real graph
+    """
     current_dir = os.path.dirname(__file__)
     current_dir = current_dir.replace("src", "dataset")
     nodes_path = os.path.join(current_dir, 'nodes.csv')
@@ -28,7 +37,12 @@ def get_size():
     return len(nodes_df)
 
 def create_graph_nx():
+    """
+    Create networkx representation of real graph
 
+    Returns:
+        networkx graph: representation of real graph
+    """
     nodes_df, edges_df = read_dataset()
 
     # Create Graph
@@ -46,7 +60,9 @@ def create_graph_nx():
     return G
 
 def nx2nk(nx_graph):
-
+    """
+    Converts networkx graph into networkit graph
+    """
     node_mapping = {node: i for i, node in enumerate(nx_graph.nodes())}
     # Initialize an empty networkit graph
     nk_graph = nk.graph.Graph(n=len(node_mapping), weighted=False)
