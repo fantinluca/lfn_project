@@ -38,7 +38,7 @@ for name, (graph_metrics, node_metrics) in G_metrics.items():
 
     if (len(node_metrics.keys()) > 1):
         metrics_df = pd.DataFrame(node_metrics)
-        if graph_type == "real": filename = f"real_node_metrics_{'_'.join(node_metrics.keys()[1:])}"
+        if graph_type == "real": filename = f"real_node_metrics_{'_'.join(list(node_metrics.keys())[1:])}"
         else: filename = os.path.join(result_dir, f"{name}_node_metrics.csv")
         output_file = os.path.join(result_dir, filename)
         metrics_df.to_csv(output_file, sep=";", index=False)
