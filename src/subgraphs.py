@@ -7,6 +7,12 @@ import re
 
 
 def convert_to_networkit(nx_graph):
+    """
+    Converts a networkx graph to a networkit one
+
+    Returns:
+        a networkit graph
+    """
     node_mapping = {node: i for i, node in enumerate(nx_graph.nodes())}
     # Initialize an empty networkit graph
     nk_graph = nk.graph.Graph(n=len(node_mapping), weighted=False)
@@ -32,6 +38,18 @@ def convert_to_networkit(nx_graph):
 
 # creates a subGraph only with the nodes of a certain genre
 def createGenreGraph (nodes_df, edges_df, genre):
+    """
+    Creates a networkx graph with only the nodes correlated to a certain genre.
+    The edges are only between nodes which satisfy the above-mentioned condition.
+
+    Parameters:
+        nodes of the original graph
+        edges of the original graph
+        genre
+    
+    Returns:
+        a networkx graph 
+    """
     # Create Graph
     G = nx.Graph()
 
@@ -54,6 +72,18 @@ def createGenreGraph (nodes_df, edges_df, genre):
 
 
 def createPopularityThreshGraph (nodes_df, edges_df, popularityTh):
+    """
+    Creates a networkx graph with only the nodes correlated to artists with popularity greater than a threshold.
+    The edges are only between nodes which satisfy the above-mentioned condition.
+
+    Parameters:
+        nodes of the original graph
+        edges of the original graph
+        popularity threshold
+
+    Returns:
+        a networkx graph 
+    """
     # Create Graph
     G = nx.Graph()
 

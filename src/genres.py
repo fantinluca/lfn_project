@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import re
+# this program prints all the genres with the number of artists who are correlated to this genre
 
 
 # Gets the current directory where the script is located
