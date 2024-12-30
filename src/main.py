@@ -13,8 +13,11 @@ parser.add_argument('-g', '--graph', nargs='*')
 args = parser.parse_args()
 
 # get results folder
-result_dir = os.path.dirname(__file__)
-result_dir = result_dir.replace("src", "results")
+if os.name == "posix":
+    result_dir = os.path.join(os.getcwd(), "lfn_project", "results")
+else:
+    result_dir = os.path.dirname(__file__)
+    result_dir = result_dir.replace("src", "results")
 
 # create graph according to cmd args
 graph_args = args.graph
