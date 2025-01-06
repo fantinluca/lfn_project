@@ -1,0 +1,3 @@
+Computed metrics for graph real
+Graph-level metrics for graph real:
+avg_clustering_coeff: 0.08081384495964533
