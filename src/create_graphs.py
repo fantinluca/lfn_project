@@ -1,5 +1,5 @@
 import pandas as pd
-import os
+import os, re
 import networkx as nx
 import networkit as nk
 
@@ -57,6 +57,74 @@ def create_graph_nx():
     for _, row in edges_df.iterrows():
         G.add_edge(row['id_0'], row['id_1'])
 
+    return G
+
+# creates a subGraph only with the nodes of a certain genre
+def create_genre_subgraph(nodes_df, edges_df, genres):
+    """
+    Creates a networkx graph with only the nodes correlated to a certain genre.
+    The edges are only between nodes which satisfy the above-mentioned condition.
+
+    Parameters:
+        nodes of the original graph
+        edges of the original graph
+        genre(s)
+    
+    Returns:
+        a networkx graph 
+    """
+
+    # Create Graph
+    G = nx.Graph()
+
+    # Add nodes on the graph
+    for index, row in nodes_df.iterrows():
+        # a node will be added only if it contains the genre
+        regex_list = re.findall(r'\'(.*?)\'', row['genres'])
+        # if it contains the genre
+        if (any(piece in genre for piece in genres for genre in regex_list)):
+            G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
+                popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
+
+    # Add edges on the graph
+    for index, row in edges_df.iterrows():
+        # add the edge only if both nodes are in the graph
+        if ( row['id_0'] in G and row['id_1'] in G ):
+            G.add_edge(row['id_0'], row['id_1'])
+
+    return G
+
+
+def create_popularity_subgraph (nodes_df, edges_df, popularity_threshold):
+    """
+    Creates a networkx graph with only the nodes correlated to artists with popularity greater than a threshold.
+    The edges are only between nodes which satisfy the above-mentioned condition.
+
+    Parameters:
+        nodes of the original graph
+        edges of the original graph
+        popularity threshold
+
+    Returns:
+        a networkx graph 
+    """
+
+    # Create Graph
+    G = nx.Graph()
+
+    # Add nodes on the graph
+    for index, row in nodes_df.iterrows():
+        # a node will be added only if it's more popular than the threshold
+        if (row['popularity'] > popularity_threshold):
+            G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
+                popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
+
+    # Add edges on the graph
+    for index, row in edges_df.iterrows():
+        # add the edge only if both nodes are in the graph
+        if ( row['id_0'] in G and row['id_1'] in G ):
+            G.add_edge(row['id_0'], row['id_1'])
+    
     return G
 
 def nx2nk(nx_graph):

@@ -3,13 +3,14 @@ import pandas as pd
 import networkx as nx
 from time import time
 
-import create_graphs, compute_metrics, constants
+import create_graphs, compute_metrics, utils
 
 # parse cmd arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('-m', '--metrics', nargs='*', default=constants.METRICS, choices=constants.METRICS)
-parser.add_argument('-g', '--graph', nargs='*')
-#parser.add_argument('-s', '--subgraphs', nargs='*')
+parser.add_argument('-m', '--metrics', nargs='*', default=utils.METRICS, choices=utils.METRICS)
+parser.add_argument('--real', action='store_true')
+parser.add_argument('--random', nargs='*', action=utils.RandomGraphAction)
+parser.add_argument('--subgraph', nargs='*', action=utils.SubgraphsAction)
 args = parser.parse_args()
 
 # get results folder
@@ -19,15 +20,30 @@ else:
     result_dir = os.path.dirname(__file__)
     result_dir = result_dir.replace("src", "results")
 
-# create graph according to cmd args
-graph_args = args.graph
-graph_type = graph_args[0]
-if graph_type == "real":
-    G = {"real": create_graphs.create_graph_nx()}
-elif graph_type == "random":
-    random_graphs_num = int(graph_args[1])
-    seed = int(str(time()).replace(".",""))
-    G = {f"rand_{seed}":nx.powerlaw_cluster_graph(constants.n, constants.m, constants.p, seed=seed) for _ in range(random_graphs_num)}
+# create graphs according to cmd args
+G = {}
+real = args.real
+random = args.random
+subgraphs = args.subgraph
+if real:
+    G["real"] = create_graphs.create_graph_nx()
+    print("Real graph created from dataset")
+if random is not None:
+    random_graphs_num = random["r"]
+    for i in range(random_graphs_num):
+        seed = int(str(time()).replace(".",""))
+        G[f"rand_{seed}_{i}"] = nx.powerlaw_cluster_graph(random["n"], random["m"], random["p"], seed=seed)
+    print(f"Created {random_graphs_num} random graphs with parameters n={random['n']}, m={random['m']}, p={random['p']}")
+if subgraphs is not None:
+    nodes, edges = create_graphs.read_dataset()
+    if utils.SUBGRAPH_TYPES[0] in subgraphs.keys():
+        genres = subgraphs[utils.SUBGRAPH_TYPES[0]]
+        G[f"sub_genre_{'_'.join(genres)}"] = create_graphs.create_genre_subgraph(nodes, edges, genres)
+        print(f"Created subgraph of real graph containing only artists from genres {', '.join(genres)}")
+    if utils.SUBGRAPH_TYPES[1] in subgraphs.keys():
+        threshold = subgraphs[utils.SUBGRAPH_TYPES[1]]
+        G[f"sub_popularity_{threshold}"] = create_graphs.create_popularity_subgraph(nodes, edges, threshold)
+        print(f"Created subgraph of real graph containing using popularity threhsold {threshold}")
 
 # compute metrics for graph
 G_metrics = {}
@@ -41,8 +57,7 @@ for name, (graph_metrics, node_metrics) in G_metrics.items():
 
     if (len(node_metrics.keys()) > 1):
         metrics_df = pd.DataFrame(node_metrics)
-        if graph_type == "real": filename = f"real_node_metrics_{'_'.join(list(node_metrics.keys())[1:])}.csv"
-        else: filename = os.path.join(result_dir, f"{name}_node_metrics.csv")
+        filename = f"{name}_node_metrics_{'_'.join(list(node_metrics.keys())[1:])}.csv"
         output_file = os.path.join(result_dir, filename)
         metrics_df.to_csv(output_file, sep=";", index=False)
         print(f"All metrics for graph {name} saved to {output_file}.")

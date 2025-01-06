@@ -1,5 +1,5 @@
-from subgraphs import createPopularityThreshGraph
-from subgraphs import createGenreGraph
+from create_subgraphs import createPopularityThreshGraph
+from create_subgraphs import createGenreGraph
 import os
 import pandas as pd
 
