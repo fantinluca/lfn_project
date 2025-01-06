@@ -115,7 +115,7 @@ def create_popularity_subgraph (nodes_df, edges_df, popularity_threshold):
     # Add nodes on the graph
     for index, row in nodes_df.iterrows():
         # a node will be added only if it's more popular than the threshold
-        if (row['popularity'] > popularity_threshold):
+        if (row['popularity'] >= popularity_threshold):
             G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
                 popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
 
