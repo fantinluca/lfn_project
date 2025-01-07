@@ -7,8 +7,8 @@ import networkit as nk
 
 
 #node_id = "3TtENHJRmw5dDe3fskI7cF" #Johann Bach
-node_id = "1JOQXgYdQV2yfrhewqx96o" #Giuseppe Verdi
-
+#node_id = "1JOQXgYdQV2yfrhewqx96o" #Giuseppe Verdi
+node_id = "2IMZYfNi21MGqxopj9fWx8"
 
 # Gets the current directory where the script is located
 current_dir = os.path.dirname(__file__)
@@ -19,8 +19,8 @@ nodes_path = os.path.join(current_dir, 'nodes.csv')
 edges_path = os.path.join(current_dir, 'edges.csv')
 
 # Upload CSV files using paths relative to the current directory, limited to a subset of rows
-nodes_df = pd.read_csv(nodes_path)#, nrows=1000)  #limite 1.000 nodi
-edges_df = pd.read_csv(edges_path)#, nrows=1000)  #limite 1.000 edges
+nodes_df = pd.read_csv(nodes_path)
+edges_df = pd.read_csv(edges_path)
 
 # Create Graph
 G = nx.Graph()
