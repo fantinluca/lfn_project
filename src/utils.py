@@ -40,10 +40,16 @@ class RandomGraphAction(argparse.Action):
         if len(values)>4:
             raise argparse.ArgumentTypeError(f"Argument {self.dest} does not accept more than 4 values")
         complete_values = {}
-        complete_values["r"] = int(values[0]) if len(values)>0 else r
-        complete_values["n"] = int(values[1]) if len(values)>1 else n
-        complete_values["m"] = int(values[2]) if len(values)>2 else m
-        complete_values["p"] = float(values[3]) if len(values)>3 else p
+        i = 0
+        complete_values["label"] = values[i] if len(values)>i else ''
+        i += 1
+        complete_values["r"] = int(values[i]) if len(values)>i else r
+        i += 1
+        complete_values["n"] = int(values[i]) if len(values)>i else n
+        i += 1
+        complete_values["m"] = int(values[i]) if len(values)>i else m
+        i += 1
+        complete_values["p"] = float(values[i]) if len(values)>i else p
         setattr(namespace, self.dest, complete_values)
 
 class SubgraphsAction(argparse.Action):
