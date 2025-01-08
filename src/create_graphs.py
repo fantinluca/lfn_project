@@ -60,7 +60,7 @@ def create_graph_nx():
     return G
 
 # creates a subGraph only with the nodes of a certain genre
-def create_genre_subgraph(nodes_df, edges_df, genres):
+def create_genre_subgraph(nodes_df, edges_df, genre):
     """
     Creates a networkx graph with only the nodes correlated to a certain genre.
     The edges are only between nodes which satisfy the above-mentioned condition.
@@ -82,7 +82,7 @@ def create_genre_subgraph(nodes_df, edges_df, genres):
         # a node will be added only if it contains the genre
         regex_list = re.findall(r'\'(.*?)\'', row['genres'])
         # if it contains the genre
-        if (any(piece in genre for piece in genres for genre in regex_list)):
+        if (genre in regex_list):
             G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
                 popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
 
