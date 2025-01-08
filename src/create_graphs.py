@@ -2,6 +2,7 @@ import pandas as pd
 import os, re
 import networkx as nx
 import networkit as nk
+import numpy as np
 
 def read_dataset():
     """
@@ -126,6 +127,41 @@ def create_popularity_subgraph (nodes_df, edges_df, popularity_threshold):
             G.add_edge(row['id_0'], row['id_1'])
     
     return G
+
+
+def create_popularity_percent_subgraph (nodes_df, edges_df, percentage_threshold):
+    """
+    Creates a networkx graph with only the x% most popular nodes where x = percentage_threshold
+    The edges are only between nodes which satisfy the above-mentioned condition.
+
+    Parameters:
+        nodes of the original graph
+        edges of the original graph
+        percentage threshold = number between 0 and 100
+
+    Returns:
+        a networkx graph 
+    """
+    # prima di tutto prendi tutti i valori di popolarità, ordinali e capisci qual è il threshold, 
+    # poi richiama l'altro metodo con quel threshold
+
+    # emtpy list
+    values = []
+    for index, row in nodes_df.iterrows():
+        values.append(row['popularity'])
+
+    # Step 3: Convert the list to a NumPy array
+    my_array = np.array(values)
+
+    # Calculate the percentile
+    percent = 100 - percentage_threshold
+    threshold = np.percentile(my_array, percent)
+
+    return create_popularity_subgraph (nodes_df, edges_df, threshold)
+
+
+
+
 
 def nx2nk(nx_graph):
     """
