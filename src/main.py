@@ -38,9 +38,10 @@ if subgraphs is not None:
     nodes, edges = create_graphs.read_dataset()
     if utils.SUBGRAPH_TYPES[0] in subgraphs.keys():
         genres = subgraphs[utils.SUBGRAPH_TYPES[0]]
+        print(genres)
         for genre in genres:
-            G[f"sub_genre_{'_'.join(genre)}"] = create_graphs.create_genre_subgraph(nodes, edges, genre)
-            print(f"Created subgraph of real graph containing only artists from genre {genres}")
+            G[f"sub_genre_{genre}"] = create_graphs.create_genre_subgraph(nodes, edges, genre)
+            print(f"Created subgraph of real graph containing only artists from genre {genre}")
     if utils.SUBGRAPH_TYPES[1] in subgraphs.keys():
         threshold = subgraphs[utils.SUBGRAPH_TYPES[1]]
         G[f"sub_popularity_{threshold}"] = create_graphs.create_popularity_subgraph(nodes, edges, threshold)

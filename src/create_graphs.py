@@ -82,7 +82,7 @@ def create_genre_subgraph(nodes_df, edges_df, genre):
         # a node will be added only if it contains the genre
         regex_list = re.findall(r'\'(.*?)\'', row['genres'])
         # if it contains the genre
-        if (genre in regex_list):
+        if (any(genre in g for g in regex_list)):
             G.add_node(row['spotify_id'], name=row['name'], followers=row['followers'],
                 popularity=row['popularity'], genres=row['genres'], chart_hits=row['chart_hits'])
 
