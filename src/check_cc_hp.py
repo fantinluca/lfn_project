@@ -2,9 +2,8 @@ import os
 import pandas as pd
 import networkx as nx
 import itertools as it
-from time import time
 
-import create_graphs, compute_metrics, utils
+import create_graphs
 
 # get results folder
 if os.name == "posix":
@@ -26,7 +25,6 @@ df = df.sort_values("clustering_coeffs", ascending=False)
 cc1 = df.index[df["clustering_coeffs"]==1.0].to_list()
 not_verified_count = 0
 for node in cc1:
-    #if node!="6vCU4ORbNFUSNXe7mnsbWX": continue
     hp_verified = True
     con_comp = nx.node_connected_component(G, node)
     for node_pair in it.combinations(con_comp, 2):
@@ -36,6 +34,5 @@ for node in cc1:
     
     if not hp_verified: not_verified_count += 1
     print(f"Hypothesis {'not' if not hp_verified else ''} verified for artist {df.loc[node]['name']}")
-    break
 
 print(f"In the end, hypothesis not verified for {not_verified_count} artists out of {len(cc1)} artists")
