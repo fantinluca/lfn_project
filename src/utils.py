@@ -83,11 +83,14 @@ class SubgraphsAction(argparse.Action):
         # store popularity threshold
         if popularity_ind!=-1:
             try:
-                threshold = int(values[popularity_ind+1])
-                if threshold<0 or threshold>100:
-                    raise argparse.ArgumentTypeError("Popularity threshold must be an integer between 0 and 100")
+                threshold = float(values[popularity_ind+1])
+                if threshold>0 or threshold<1: # percentage threshold
+                    complete_values[utils.SUBGRAPH_TYPES[1]] = threshold
+                elif (threshold>0 or threshold<100) and threshold.is_integer():
+                    complete_values[utils.SUBGRAPH_TYPES[1]] = int(threshold)
+                else:
+                    raise argparse.ArgumentTypeError("Popularity threshold must be either an integer between 0 and 100 or a float between 0 and 1")
             except IndexError: raise argparse.ArgumentTypeError("No threshold specified for popularity subgraph")
             except ValueError: raise argparse.ArgumentTypeError("Invalid value for popularity threshold entered")
-            complete_values[utils.SUBGRAPH_TYPES[1]] = threshold
 
         setattr(namespace, self.dest, complete_values)

@@ -137,7 +137,7 @@ def create_popularity_percent_subgraph (nodes_df, edges_df, percentage_threshold
     Parameters:
         nodes of the original graph
         edges of the original graph
-        percentage threshold = number between 0 and 100
+        percentage threshold = number between 0 and 1
 
     Returns:
         a networkx graph 
