@@ -37,7 +37,7 @@ class RandomGraphAction(argparse.Action):
     Class specifying how the cmd arguments for random graphs are processed
     """
     def __call__(self, parser, namespace, values, option_string = None):
-        if len(values)>4:
+        if len(values)>5:
             raise argparse.ArgumentTypeError(f"Argument {self.dest} does not accept more than 4 values")
         complete_values = {}
         i = 0
