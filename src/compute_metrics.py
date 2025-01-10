@@ -1,5 +1,7 @@
 import networkx as nx
 import networkit as nk
+
+import utils
 from create_graphs import nx2nk
 
 # metrics: list
@@ -18,14 +20,22 @@ def compute_metrics(nx_graph, metric_list):
     graph_metrics = {"n_nodes": nx_graph.number_of_nodes(), "n_edges": nx_graph.number_of_edges()}
     node_metrics = {"node": nx_graph.nodes()}
 
-    for metric in metric_list:
-        result = globals()[metric](nx_graph)
+    for m in metric_list:
+        if any(m.startswith(mod) for mod in utils.NODE_METRIC_MODIFIERS.keys()):
+            mod, metric = m.split("_", maxsplit=1)
+            result = globals()[metric](nx_graph)
+            if type(result) is list: # is a node-level metric
+                result = utils.NODE_METRIC_MODIFIERS[mod](result)
+            elif type(result) is dict: # is a node-level metric
+                result = utils.NODE_METRIC_MODIFIERS[mod](result.values())
+        else:
+            result = globals()[m](nx_graph)
         if type(result) is list: # is a node-level metric
-            node_metrics[metric] = result
-        elif type(result) is dict:
-            node_metrics[metric] = list(result.values())
+            node_metrics[m] = result
+        elif type(result) is dict: # is a node-level metric
+            node_metrics[m] = list(result.values())
         else: # is a graph-level metric
-            graph_metrics[metric] = result
+            graph_metrics[m] = result
 
     return graph_metrics, node_metrics
 

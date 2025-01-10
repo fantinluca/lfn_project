@@ -7,7 +7,8 @@ import create_graphs, compute_metrics, utils
 
 # parse cmd arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('-m', '--metrics', nargs='*', default=utils.METRICS, choices=utils.METRICS)
+metric_choices = utils.METRICS + [f"{mod}_{metric}" for metric in utils.METRICS[utils.SEP_ID:] for mod in utils.NODE_METRIC_MODIFIERS.keys()]
+parser.add_argument('-m', '--metrics', nargs='*', default=utils.METRICS, choices=metric_choices)
 parser.add_argument('--real', action='store_true')
 parser.add_argument('--random', nargs='*', action=utils.RandomGraphAction)
 parser.add_argument('--subgraph', nargs='*', action=utils.SubgraphsAction)

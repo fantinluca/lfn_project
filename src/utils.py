@@ -1,6 +1,6 @@
 import argparse
-
 import utils
+from statistics import mean
 
 METRICS = [
     "connected_components",
@@ -15,6 +15,15 @@ METRICS = [
     "clustering_coeffs"
 ]
 """List of available metrics"""
+
+NODE_METRIC_MODIFIERS = {
+    "max": max,
+    "avg": mean
+}
+"""Dictionaries of available modifiers for node level metrics as keys and corresponding methods as values"""
+
+SEP_ID = 4
+"""Index of the first node level metric in METRICS"""
 
 # Parameters for the Power Law Clustered Graph
 r = 1
