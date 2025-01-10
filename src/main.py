@@ -36,7 +36,7 @@ if random is not None:
     for i in range(random_graphs_num):
         seed = int(str(time()).replace(".",""))
         G[f"rand_{'_'.join([str(e) for e in random.values()])}_{seed}_{i}"] = nx.powerlaw_cluster_graph(random["n"], random["m"], random["p"], seed=seed)
-    graph_types.append('_'.join([str(e) for e in random.values()]))
+    graph_types.append(f"rand_{'_'.join([str(e) for e in random.values()])}")
     print(f"Created {random_graphs_num} random graphs with parameters n={random['n']}, m={random['m']}, p={random['p']} and label \'{random['label']}\'")
 if subgraphs is not None:
     nodes, edges = create_graphs.read_dataset()

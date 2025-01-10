@@ -20,22 +20,24 @@ def compute_metrics(nx_graph, metric_list):
     graph_metrics = {"n_nodes": nx_graph.number_of_nodes(), "n_edges": nx_graph.number_of_edges()}
     node_metrics = {"node": nx_graph.nodes()}
 
-    for m in metric_list:
-        if any(m.startswith(mod) for mod in utils.NODE_METRIC_MODIFIERS.keys()):
-            mod, metric = m.split("_", maxsplit=1)
-            result = globals()[metric](nx_graph)
-            if type(result) is list: # is a node-level metric
-                result = utils.NODE_METRIC_MODIFIERS[mod](result)
-            elif type(result) is dict: # is a node-level metric
-                result = utils.NODE_METRIC_MODIFIERS[mod](result.values())
-        else:
+    # compute graph level metrics
+    for m in utils.METRICS[:utils.SEP_ID]:
+        if m in metric_list:
             result = globals()[m](nx_graph)
-        if type(result) is list: # is a node-level metric
-            node_metrics[m] = result
-        elif type(result) is dict: # is a node-level metric
-            node_metrics[m] = list(result.values())
-        else: # is a graph-level metric
             graph_metrics[m] = result
+
+    # compute node level metrics
+    for m in utils.METRICS[utils.SEP_ID:]:
+        matches = [metric for metric in metric_list if m in metric]
+        if len(matches)>0:
+            result = globals()[m](nx_graph)
+            if type(result) is dict: result = list(result.values())
+            if matches == [m]: # compute only entire metric
+                node_metrics[m] = result
+            else: # compute only certain statistic of metric
+                for match in matches:
+                    mod = match.split("_", maxsplit=1)[0]
+                    graph_metrics[match] = utils.NODE_METRIC_MODIFIERS[mod](result)
 
     return graph_metrics, node_metrics
 
