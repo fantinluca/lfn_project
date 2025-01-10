@@ -1,0 +1,2 @@
+graph;n_nodes;n_edges;connected_components;avg_clustering_coeff;global_clustering_coeff;approx_global_clustering_coeff
+sub_popularity_0.1;190;1290;24;0.2774443009015346;0.36287133732130183;0.3635
