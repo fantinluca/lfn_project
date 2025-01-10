@@ -51,7 +51,7 @@ if subgraphs is not None:
         if type(threshold) is int:
             graph = create_graphs.create_popularity_subgraph(nodes, edges, threshold)
         else: # float
-            graph = create_graphs.create_popularity_percent_subgraph(nodes, edges, threshold*100)
+            graph = create_graphs.create_popularity_percent_subgraph(nodes, edges, threshold)
         G[f"sub_popularity_{threshold}"] = graph
         print(f"Created subgraph of real graph containing using popularity threhsold {threshold}")
 
