@@ -15,7 +15,7 @@ def compute_metrics(nx_graph, metric_list):
         dict string->float: graph metrics computed for nx_graph
         dict string->list of floats: node metrics computed for nx_graph, contains list of nodes and lists with metric values
     """
-    graph_metrics = {}
+    graph_metrics = {"n_nodes": nx_graph.number_of_nodes(), "n_edges": nx_graph.number_of_edges()}
     node_metrics = {"node": nx_graph.nodes()}
 
     for metric in metric_list:

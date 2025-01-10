@@ -74,7 +74,6 @@ for name, (graph_metrics, node_metrics) in G_metrics.items():
 
     if (len(graph_metrics.keys()) > 0):
         print(f"Graph-level metrics for graph {name}:")
-        print(f"{G[name].number_of_nodes()} nodes and {G[name].number_of_edges()} edges")
         for name, value in graph_metrics.items():
             print(f"{name}: {value}")
         
