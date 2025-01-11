@@ -71,6 +71,18 @@
 \thispagestyle{plain}
 \pagestyle{plain}
 
+\section{Dataset}
+
+For this project, we used the Spotify Artist Feature Collaboration Network from Kaggle \cite{dataset}. This dataset consists of a graph where nodes correspond to artists and edges connect artists who have collaborated on at least one song. It has 156,422 nodes, which include around 20,000 artists who appeard in the Spotify weekly charts and around 136,000 artists who had at least one feature with the chart artists, and 300,386 edges between them. Out of the information included with the nodes, the ones we used to analyze our results are the following:
+\begin{itemize}
+    \item artist popularity, expressed as an integer number between 0 and 100 (100 corresponding to the most popular artist on the service), according to the Spotify API
+    \item list of genres, according to the Spotify API
+\end{itemize}
+
+\section{Code}
+
+All the code developed for this project, together with results files, dataset files and more, can be found in our GitHub repository \cite{githubRepo}. The central script is \texttt{main.py}, which computes several graph- and node-level metrics on various graphs, depending on the command line arguments provided. The graph-level metrics include the number of connected components and a series of clustering coefficients (average, global, approximate global), while the node-level metrics include the local clustering coefficients and a wide array of centralities measures (degree, closeness, betweenness, PageRank, eigenvector). The script can work on the entire dataset, subgraphs taken from the dataset with respect to certain genres or popularity thresholds, and random graphs generated with the Holme-Kim model \cite{Holme2002} with parameters specified through the command line arguments.
+
 \section{Data Analysis}
 In the first part of the analysis, artist rankings were calculated and sorted based on two key centrality metrics: degree centrality and closeness centrality. Degree centrality identified artists with the highest number of direct connections (i.e., those who collaborate with the most artists), so these artists occupy the top positions in the ranking. Some of the top-ranked artists include Johann Sebastian Bach, Traditional, Mc Gw, MC MN, and Jean Sibelius, who stand out for their high number of collaborations. Closeness centrality, on the other hand, highlighted artists who are more "central" in the network, meaning those who, despite having fewer direct collaborations, are well-positioned to interact with the entire network. Artists such as R3HAB, Snoop Dogg, Diplo, David Guetta, and Tiësto are at the top of this ranking, indicating their global influence within the network.
 
