@@ -1,0 +1,8 @@
+metric;statistic;p-value;output
+avg_clustering_coeff;0.3183510663030145;0.8528466429704624;Probably not Gaussian
+global_clustering_coeff;4.159524537637651;0.12495991553605759;Probably not Gaussian
+approx_global_clustering_coeff;1.2287871428771175;0.540968854821672;Probably not Gaussian
+max_closeness;6.763632656144461;0.03398566951487744;Probably Gaussian
+avg_closeness;13.800078486021139;0.0010077458812902586;Probably Gaussian
+max_eigenvector;7.534068685073675;0.02312052928392109;Probably Gaussian
+avg_eigenvector;4.344785877642282;0.11390472349766555;Probably not Gaussian

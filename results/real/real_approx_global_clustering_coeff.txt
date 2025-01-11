@@ -1,3 +1,0 @@
-Computed metrics for graph real
-Graph-level metrics for graph real:
-approx_global_clustering_coeff: 0.0387

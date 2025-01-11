@@ -1,3 +1,0 @@
-Computed metrics for graph real
-Graph-level metrics for graph real:
-connected_components: 4338

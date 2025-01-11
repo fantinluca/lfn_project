@@ -1,2 +1,2 @@
-graph;n_nodes;n_edges
-real;156326;300386
+graph;n_nodes;n_edges;approx_global_clustering_coeff;avg_clustering_coeff;connected_components;global_clustering_coeff
+real;156326;300386;0.0387;0.08081384495964533;4338;0.03833838057665606
