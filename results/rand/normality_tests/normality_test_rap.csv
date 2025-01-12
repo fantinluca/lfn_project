@@ -1,8 +1,8 @@
 metric;statistic;p-value;output
-avg_clustering_coeff;0.20203439116789773;0.9039174893631533;Probably not Gaussian
-global_clustering_coeff;1.7318224766261627;0.4206680490788849;Probably not Gaussian
-approx_global_clustering_coeff;1.1291211757241446;0.5686099459831266;Probably not Gaussian
-max_closeness;2.688895912703682;0.26068357685812255;Probably not Gaussian
-avg_closeness;1.11918013806442;0.5714432681336837;Probably not Gaussian
-max_eigenvector;52.179929894640466;4.669519467376038e-12;Probably Gaussian
-avg_eigenvector;5.541012648070853;0.06263028549383073;Probably not Gaussian
+avg_clustering_coeff;0.995347797870636;0.7996402382850647;Probably not Gaussian
+global_clustering_coeff;0.9908326268196106;0.23565030097961426;Probably not Gaussian
+approx_global_clustering_coeff;0.9914292693138123;0.28585752844810486;Probably not Gaussian
+max_closeness;0.9783474802970886;0.003489116672426462;Probably Gaussian
+avg_closeness;0.9885113835334778;0.10754632949829102;Probably not Gaussian
+max_eigenvector;0.7216304540634155;5.00352164033374e-18;Probably Gaussian
+avg_eigenvector;0.949834406375885;1.8188318335887743e-06;Probably Gaussian
