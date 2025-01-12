@@ -47,6 +47,7 @@ for random_graph, file in rand_files.items():
             else: values_to_compare[metric] = utils.NODE_METRIC_MODIFIERS[mod](file_df[m])
 
     result_df = pd.DataFrame(columns=["prob_higher","prob_lower","subject","mean","stdev"])
+    result_df.index.name = "metric"
     for metric in metrics:
         data = rand_df[metric].to_list()
         subject = values_to_compare[metric]

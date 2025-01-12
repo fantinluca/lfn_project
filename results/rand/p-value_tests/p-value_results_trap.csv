@@ -1,4 +1,4 @@
-;prob_higher;prob_lower;subject;mean;stdev
+metric;prob_higher;prob_lower;subject;mean;stdev
 avg_clustering_coeff;1.0;0.0;0.188966027;0.5897828597492067;0.0031166111038009063
 global_clustering_coeff;0.0;1.0;0.270114657;0.10194989854860888;0.01501974012005855
 approx_global_clustering_coeff;0.0;1.0;0.2642;0.1016545;0.015112940967044332
