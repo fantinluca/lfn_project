@@ -46,7 +46,7 @@ for random_graph, file in rand_files.items():
             if graph_level: values_to_compare[metric] = file_df.loc[metric][random_graph]
             else: values_to_compare[metric] = utils.NODE_METRIC_MODIFIERS[mod](file_df[m])
 
-    result_df = pd.DataFrame(columns=["prob_higher","prob_lower","subject","mean","stdev"])
+    result_df = pd.DataFrame(columns=["output","prob_higher","prob_lower","subject","mean","stdev"])
     result_df.index.name = "metric"
     for metric in metrics:
         data = rand_df[metric].to_list()
@@ -54,6 +54,7 @@ for random_graph, file in rand_files.items():
         mean = statistics.mean(data)
         std = statistics.stdev(data)
         prob_lower = scipy.stats.norm.cdf(subject, loc=mean, scale=std)
+        output = "lower" if prob_lower > alpha else "higher" if 1-prob_lower > alpha else "equal"
         #print(f"Pr[X<={subject} | mean={mean}, stdev={std}] = {prob_lower}")
-        result_df.loc[metric] = [1-prob_lower,prob_lower,subject,mean,std]
+        result_df.loc[metric] = [output,1-prob_lower,prob_lower,subject,mean,std]
     result_df.to_csv(os.path.join(rand_dir, "p-value_tests", f"p-value_results_{random_graph}.csv"), sep=";")
