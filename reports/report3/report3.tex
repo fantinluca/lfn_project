@@ -4,7 +4,7 @@
 
 % Comment this line out
                                                           % if you need a4paper
-                                                          \documentclass[a4paper, 12pt, conference]{ieeeconf}      % Use this line for a4
+\documentclass[a4paper, 12pt, conference]{ieeeconf}      % Use this line for a4
                                                           % paper
 
 \IEEEoverridecommandlockouts                              % This command is only
@@ -39,6 +39,11 @@
 \usepackage{array}
 \usepackage{pgf}
 \usepackage{makecell}
+\usepackage{subcaption}
+\usepackage{csvsimple}
+\usepackage{pifont}
+\usepackage{booktabs}
+\usepackage{caption}
 \usepackage[sorting=none]{biblatex} % For biblatex
 \addbibresource{../reports.bib} % Path to your .bib file
 
@@ -48,6 +53,12 @@
 \renewcommand\theadfont{\bfseries}
 \renewcommand\theadgape{\Gape[4pt]}
 \renewcommand\cellgape{\Gape[4pt]}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\graphicspath{{C:/Users/ferra/OneDrive/Desktop/Uni/projects_master/lfn_project/code/lfn_project/results/rand/dist_plots}}
+%\providecommand{\main}{..}
+%\graphicspath{{\main/results/rand/dist_plots}}
 
 \newcommand{\rework}[1]{\todo[color=yellow,inline]{#1}}
 
@@ -91,6 +102,67 @@
 
 \input{sections/10_conclusion.tex}
 
+  % Please add the following required packages to your document preamble:
+  % \usepackage{booktabs}
+    \begin{table*}[]
+      \centering
+      \begin{tabular}{|c|c|c|c|c|c|c|c|}
+      \hline
+      \textbf{Reference graph}                                                       & \textit{Average cc} & \textit{Global cc} & \textit{\begin{tabular}[c]{@{}c@{}}Approximate\\ global cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Maximum\\ eigenvector\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Average\\ eigenvector\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Maximum\\ closeness\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Average\\ closeness\end{tabular}} \\ \hline
+      \textbf{House subgraph}                                                        & \xmark              & \cmark             & \cmark                                                                   & \cmark                                                                 & \cmark                                                                 & \cmark                                                               & \cmark                                                               \\ \hline
+      \textbf{Pop subgraph}                                                          & \xmark              & \xmark             & \xmark                                                                   & \cmark                                                                 & \cmark                                                                 &                                                                      &                                                                      \\ \hline
+      \textbf{Rap subgraph}                                                          & \xmark              & \xmark             & \xmark                                                                   & \cmark                                                                 & \cmark                                                                 & \cmark                                                               & \xmark                                                               \\ \hline
+      \textbf{Whole dataset}                                                         & \xmark              & \xmark             & \xmark                                                                   & \cmark                                                                 & \cmark                                                                 &                                                                      &                                                                      \\ \hline
+      \textbf{\begin{tabular}[c]{@{}c@{}}Top 10\%\\ popularity subgraph\end{tabular}} & \xmark              & \xmark             & \xmark                                                                   & \cmark                                                                 & \cmark                                                                 & \xmark                                                               & \xmark                                                               \\ \hline
+      \textbf{Trap subgraph}                                                         & \xmark              & \xmark             & \xmark                                                                   & \cmark                                                                 & \cmark                                                                 & \cmark                                                               & \xmark                                                               \\ \hline
+      \end{tabular}
+      \caption{Results of the Shapiro-Wilk normality tests for all considered graphs. The "reference graph" is the graph to which the random graphs used in the analysis refer to. "cc" stands for "clustering coefficient".}
+      \label{tab:normality}
+\end{table*}
+  
+  \begin{table*}[]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Reference graph}                                                        & \textit{Average cc}     & \textit{Global cc}   & \textit{\begin{tabular}[c]{@{}c@{}}Approximate\\ global cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Maximum\\ eigenvector\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Average\\ eigenvector\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Maximum\\ closeness\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Average\\ closeness\end{tabular}} \\ \hline
+    \textbf{House subgraph}                                                         & \textbf{\textgreater{}} & \textbf{\textless{}} & \textbf{\textless{}}                                                     & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                              & \textbf{\textgreater{}}                                              \\ \hline
+    \textbf{Pop subgraph}                                                           & \textbf{\textgreater{}} & \textbf{\textless{}} & \textbf{\textless{}}                                                     & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                                & \textbf{}                                                            & \textbf{}                                                            \\ \hline
+    \textbf{Rap subgraph}                                                           & \textbf{\textgreater{}} & \textbf{\textless{}} & \textbf{\textless{}}                                                     & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                              & \textbf{\textgreater{}}                                              \\ \hline
+    \textbf{Whole dataset}                                                          & \textbf{\textgreater{}} & \textbf{\textless{}} & \textbf{\textless{}}                                                     & \textbf{\textgreater{}}                                                & \textbf{\textless{}}                                                   & \textbf{}                                                            & \textbf{}                                                            \\ \hline
+    \textbf{\begin{tabular}[c]{@{}c@{}}Top 10\%\\ popularity subgraph\end{tabular}} & \textbf{\textgreater{}} & \textbf{\textless{}} & \textbf{\textless{}}                                                     & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                              & \textbf{\textgreater{}}                                              \\ \hline
+    \textbf{Trap subgraph}                                                          & \textbf{\textgreater{}} & \textbf{\textless{}} & \textbf{\textless{}}                                                     & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                                & \textbf{\textgreater{}}                                              & \textbf{\textgreater{}}                                              \\ \hline
+    \end{tabular}
+    \caption{Results of the p-value computations: the contents of the cells represent how we should expect the metric values to be, compared to the values computed on the real (sub)graphs, if we were to accept our null hypothesis. "cc" stands for "clustering coefficient".}
+    \label{tab:pvalue}
+\end{table*}
+  
+  \begin{figure*}
+      \centering
+      \begin{subfigure}{.33\textwidth}
+        \centering
+        \captionsetup{justification=centering}
+        \includegraphics[width=\linewidth]{dist_plot_real_avg_clustering_coeff.png}
+        \caption{Whole dataset, average \\ clustering coefficient}
+        \label{fig:hist1}
+      \end{subfigure}%
+      \begin{subfigure}{.33\textwidth}
+        \centering
+        \captionsetup{justification=centering}
+        \includegraphics[width=\linewidth]{dist_plot_rap_global_clustering_coeff.png}
+        \caption{Rap subgraph, global \\ clustering coefficient}
+        \label{fig:hist2}
+      \end{subfigure}
+      \begin{subfigure}{.33\textwidth}
+        \centering
+        \captionsetup{justification=centering}
+        \includegraphics[width=\linewidth]{dist_plot_top10popularity_max_closeness.png}
+        \caption{Top 10\% popularity subgraph, maximum closeness}
+        \label{fig:hist3}
+      \end{subfigure}
+      \caption{Example of histograms for the metrics computed on random graphs that do not have a Gaussian distribution according to the Shapiro-Wilk test.}
+      \label{fig:test}
+  \end{figure*}
+  
 \subsection{Graph analysis}
 
 \subsection{Genre subgraphs analysis}
