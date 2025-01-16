@@ -6,9 +6,9 @@
   \centering
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
       \hline
-      \textbf{Metric}                                                            & \textbf{\begin{tabular}[c]{@{}c@{}}Connected\\ components\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Global\\ cc\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Approx.\\ global cc\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Average\\ cc\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Local\\ cc's\end{tabular}} & \textbf{Degree} & \textbf{\begin{tabular}[c]{@{}c@{}}Close-\\ ness\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Between-\\ ness\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Page-\\ Rank\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Eigen-\\ vector\end{tabular}} \\ \hline
-      \textit{\begin{tabular}[c]{@{}c@{}}Execution\\ time\end{tabular}}          & 57s                                                                     & 56s                                                          & 56s                                                                      & 1m 02s                                                        & 1m 2s                                                         & 1m 03s          & \begin{tabular}[c]{@{}c@{}}20h 39m\\ 37s\end{tabular}          & \begin{tabular}[c]{@{}c@{}}4d 10h\\ 31m 12s\end{tabular}         & 1m 28s                                                        & 1m 16s                                                           \\ \hline
-      \textit{\begin{tabular}[c]{@{}c@{}}RAM\\ consumption\\ (MBs)\end{tabular}} & 246.11                                                                  & 246.89                                                       & 247.43                                                                   & 302.21                                                        & 313.58                                                        & 297.90          & 331.02                                                         & 371.27                                                           & 508.70                                                        & 324.11                                                           \\ \hline
+      \textit{Metric}                                                            & \textit{\begin{tabular}[c]{@{}c@{}}Connected\\ components\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Global\\ cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Approx.\\ global cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Average\\ cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Local\\ cc's\end{tabular}} & \textit{Degree} & \textit{\begin{tabular}[c]{@{}c@{}}Close-\\ ness\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Between-\\ ness\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Page-\\ Rank\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Eigen-\\ vector\end{tabular}} \\ \hline
+      \textbf{\begin{tabular}[c]{@{}c@{}}Execution\\ time\end{tabular}}          & 57s                                                                     & 56s                                                          & 56s                                                                      & 1m 02s                                                        & 1m 2s                                                         & 1m 03s          & \begin{tabular}[c]{@{}c@{}}20h 39m\\ 37s\end{tabular}          & \begin{tabular}[c]{@{}c@{}}4d 10h\\ 31m 12s\end{tabular}         & 1m 28s                                                        & 1m 16s                                                           \\ \hline
+      \textbf{\begin{tabular}[c]{@{}c@{}}RAM\\ consumption\\ (MBs)\end{tabular}} & 246.11                                                                  & 246.89                                                       & 247.43                                                                   & 302.21                                                        & 313.58                                                        & 297.90          & 331.02                                                         & 371.27                                                           & 508.70                                                        & 324.11                                                           \\ \hline
       \end{tabular}
   \caption{Execution time and RAM consumption of the metric computations on the CAPRI cluster.}
   \label{tab:capri}
@@ -61,6 +61,25 @@
   \caption{Results of the p-value computations: the contents of the cells represent how we should expect the metric values to be, compared to the values computed on the real (sub)graphs, if we were to accept our null hypothesis. "cc" stands for "clustering coefficient".}
   \label{tab:pvalue}
 \end{table*}
+
+\begin{figure*}
+  \centering
+  \begin{minipage}{.48\textwidth}
+    \raggedleft
+    %\captionsetup{justification=centering}
+    \includegraphics[width=\linewidth]{centrality_dists.png}
+    \caption{Distribution of the centrality measures on the whole dataset. All values have been sorted in descending order and normalized.}
+    \label{fig:centralities}
+  \end{minipage}%
+  \hspace{0.5cm}%
+  \begin{minipage}{.48\textwidth}
+    \raggedright
+    %\captionsetup{justification=centering}
+    \includegraphics[width=\linewidth]{ccs_dists.png}
+    \caption{Distribution of the local clustering coefficients on the whole dataset. All values have been sorted in descending order.}
+    \label{fig:ccs}
+  \end{minipage}
+\end{figure*}
 
 \begin{figure*}
     \centering
