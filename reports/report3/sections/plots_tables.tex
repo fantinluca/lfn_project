@@ -3,19 +3,32 @@
 % \useunder{\uline}{\ul}{}
 
 \begin{table*}[]
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-    \hline
-    \textbf{\#}           & \textit{\textbf{1}}                                        & \textit{\textbf{2}}                                         & \textit{\textbf{3}}                                           & \textit{\textbf{4}}                                         & \textit{\textbf{5}}                                    & \textit{\textbf{6}}                                             & \textit{\textbf{7}}                                      & \textit{\textbf{8}}                                     & \textit{\textbf{9}}                                    & \textit{\textbf{10}}                                      \\ \hline
-    \textit{Degree}       & Johann Sebastian Bach                                      & Traditional                                                 & Mc Gw                                                         & MC MN                                                       & Jean Sibelius                                          & Armin van Buuren                                                & Gucci Mane                                               & Steve Aoki                                              & Snoop Dogg                                             & Diplo                                                     \\ \hline
-    \textit{Closeness}    & R3HAB                                                      & Snoop Dogg                                                  & Diplo                                                         & David Guetta                                                & Tiësto                                                 & Steve Aoki                                                      & Major Lazer                                              & Pitbull                                                 & Sean Paul                                              & French Montana                                            \\ \hline
-    \textit{Betweenness}  & Snoop Dogg                                                 & Traditional                                                 & R3HAB                                                         & Diplo                                                       & Johann Sebastian Bach                                  & Tiësto                                                          & Major Lazer                                              & Steve Aoki                                              & Pitbull                                                & David Guetta                                              \\ \hline
-    \textit{PageRank}     & Johann Sebastian Bach                                      & Traditional                                                 & Jean Sibelius                                                 & Mc Gw                                                       & MC MN                                                  & HaKokhav HaBa                                                       & John Williams                                            & A.R. Rahman                                             & Armin van Buuren                                       & Snoop Dogg                                                \\ \hline
-    \textit{Eigenvector}  & Farruko                                                    & French Montana                                              & Gucci Mane                                                    & Ty Dolla \$ign                                              & Lil Wayne                                              & Chris Brown                                                     & Snoop Dogg                                               & De La Ghetto                                            & J Balvin                                               & Future                                                    \\ \hline
-    \textit{Average rank} & \begin{tabular}[c]{@{}c@{}}Snoop Dogg\\ (5.8)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Gucci Mane\\ (11.6)\end{tabular} & \begin{tabular}[c]{@{}c@{}}David Guetta\\ (18.8)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Steve Aoki\\ (19.0)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Diplo\\ (20.8)\end{tabular} & \begin{tabular}[c]{@{}c@{}}French Montana\\ (21.0)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Pitbull\\ (23.4)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Tiesto\\ (23.6)\end{tabular} & \begin{tabular}[c]{@{}c@{}}R3HAB\\ (24.4)\end{tabular} & \begin{tabular}[c]{@{}c@{}}The Game\\ (27.0)\end{tabular} \\ \hline
-    \end{tabular}
-    \caption{Top 10 artists in the whole dataset, according to our centrality measures. The "average rank" row also reports the value for each artist.}
-    \label{tab:ranking}
-    \end{table*}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \textit{Metric}                                                            & \textit{\begin{tabular}[c]{@{}c@{}}Connected\\ components\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Global\\ cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Approx.\\ global cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Average\\ cc\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Local\\ cc's\end{tabular}} & \textit{Degree} & \textit{\begin{tabular}[c]{@{}c@{}}Close-\\ ness\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Between-\\ ness\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Page-\\ Rank\end{tabular}} & \textit{\begin{tabular}[c]{@{}c@{}}Eigen-\\ vector\end{tabular}} \\ \hline
+      \textbf{\begin{tabular}[c]{@{}c@{}}Execution\\ time\end{tabular}}          & 57s                                                                     & 56s                                                          & 56s                                                                      & 1m 02s                                                        & 1m 2s                                                         & 1m 03s          & \begin{tabular}[c]{@{}c@{}}20h 39m\\ 37s\end{tabular}          & \begin{tabular}[c]{@{}c@{}}4d 10h\\ 31m 12s\end{tabular}         & 1m 28s                                                        & 1m 16s                                                           \\ \hline
+      \textbf{\begin{tabular}[c]{@{}c@{}}RAM\\ consumption\\ (MBs)\end{tabular}} & 246.11                                                                  & 246.89                                                       & 247.43                                                                   & 302.21                                                        & 313.58                                                        & 297.90          & 331.02                                                         & 371.27                                                           & 508.70                                                        & 324.11                                                           \\ \hline
+      \end{tabular}
+  \caption{Execution time and RAM consumption of the metric computations on the CAPRI cluster.}
+  \label{tab:capri}
+\end{table*}
+
+\begin{table*}[]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \textbf{\#}           & \textit{\textbf{1}}                                        & \textit{\textbf{2}}                                         & \textit{\textbf{3}}                                           & \textit{\textbf{4}}                                         & \textit{\textbf{5}}                                    \\ \hline
+      \textit{Degree}       & Johann Sebastian Bach                                      & Traditional                                                 & Mc Gw                                                         & MC MN                                                       & Jean Sibelius                                          \\ \hline
+      \textit{Closeness}    & R3HAB                                                      & Snoop Dogg                                                  & Diplo                                                         & David Guetta                                                & Tiësto                                                 \\ \hline
+      \textit{Betweenness}  & Snoop Dogg                                                 & Traditional                                                 & R3HAB                                                         & Diplo                                                       & Johann Sebastian Bach                                  \\ \hline
+      \textit{PageRank}     & Johann Sebastian Bach                                      & Traditional                                                 & Jean Sibelius                                                 & Mc Gw                                                       & MC MN                                                  \\ \hline
+      \textit{Eigenvector}  & Farruko                                                    & French Montana                                              & Gucci Mane                                                    & Ty Dolla \$ign                                              & Lil Wayne                                              \\ \hline
+      \textit{Average rank} & \begin{tabular}[c]{@{}c@{}}Snoop Dogg\\ (5.8)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Gucci Mane\\ (11.6)\end{tabular} & \begin{tabular}[c]{@{}c@{}}David Guetta\\ (18.8)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Steve Aoki\\ (19.0)\end{tabular} & \begin{tabular}[c]{@{}c@{}}Diplo\\ (20.8)\end{tabular} \\ \hline
+      \end{tabular}
+  \caption{Top 5 artists in the whole dataset, according to our centrality measures. The "average rank" row also reports the value for each artist.}
+  \label{tab:ranking}
+  \end{table*}
 
 \begin{table*}[]
     \centering
@@ -48,6 +61,25 @@
   \caption{Results of the p-value computations: the contents of the cells represent how we should expect the metric values to be, compared to the values computed on the real (sub)graphs, if we were to accept our null hypothesis. "cc" stands for "clustering coefficient".}
   \label{tab:pvalue}
 \end{table*}
+
+\begin{figure*}
+  \centering
+  \begin{minipage}{.48\textwidth}
+    \raggedleft
+    %\captionsetup{justification=centering}
+    \includegraphics[width=\linewidth]{centrality_dists.png}
+    \caption{Distribution of the centrality measures on the whole dataset. All values have been sorted in descending order and normalized.}
+    \label{fig:centralities}
+  \end{minipage}%
+  \hspace{0.5cm}%
+  \begin{minipage}{.48\textwidth}
+    \raggedright
+    %\captionsetup{justification=centering}
+    \includegraphics[width=\linewidth]{ccs_dists.png}
+    \caption{Distribution of the local clustering coefficients on the whole dataset. All values have been sorted in descending order.}
+    \label{fig:ccs}
+  \end{minipage}
+\end{figure*}
 
 \begin{figure*}
     \centering
