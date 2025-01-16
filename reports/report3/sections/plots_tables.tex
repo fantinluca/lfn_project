@@ -2,6 +2,7 @@
 % \usepackage[normalem]{ulem}
 % \useunder{\uline}{\ul}{}
 
+\iffalse
 \begin{table*}[]
   \centering
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
@@ -13,6 +14,7 @@
   \caption{Execution time and RAM consumption of the metric computations on the CAPRI cluster.}
   \label{tab:capri}
 \end{table*}
+\fi
 
 \begin{table*}[]
   \centering
@@ -62,26 +64,53 @@
   \label{tab:pvalue}
 \end{table*}
 
-\begin{figure*}
+\begin{figure*}[]
   \centering
   \begin{minipage}{.48\textwidth}
-    \raggedleft
+    \centering
     %\captionsetup{justification=centering}
-    \includegraphics[width=\linewidth]{centrality_dists.png}
+    \includegraphics[width=.8\linewidth]{centrality_dists.png}
     \caption{Distribution of the centrality measures on the whole dataset. All values have been sorted in descending order and normalized.}
     \label{fig:centralities}
   \end{minipage}%
   \hspace{0.5cm}%
   \begin{minipage}{.48\textwidth}
-    \raggedright
+    \centering
     %\captionsetup{justification=centering}
-    \includegraphics[width=\linewidth]{ccs_dists.png}
+    \includegraphics[width=.8\linewidth]{ccs_dists.png}
     \caption{Distribution of the local clustering coefficients on the whole dataset. All values have been sorted in descending order.}
     \label{fig:ccs}
   \end{minipage}
 \end{figure*}
 
-\begin{figure*}
+\begin{figure*}[]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=\linewidth]{boxplot_closeness.png}  % Usa \includegraphics per il PDF
+    \caption{Closeness centrality}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=\linewidth]{boxplot_betweenness.png}  % Usa \includegraphics per il PDF
+    \caption{Betweenness centrality}
+    \label{fig:between}
+  \end{subfigure}
+  \caption{Boxplots of the distribution of some centrality measures on several genre subgraphs.}
+  \label{fig:boxplot}
+\end{figure*}
+
+\begin{figure*}[]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[width=.75\linewidth]{correlation.png}  % Usa \includegraphics per il PDF
+    \caption{Correlation matrix between all node-level metrics computed on all genre subgraphs.}
+    \label{fig:correlation}
+\end{figure*}
+
+\begin{figure*}[]
     \centering
     \begin{subfigure}{.33\textwidth}
       \centering
@@ -103,27 +132,6 @@
       \includegraphics[width=\linewidth]{dist_plot_top10popularity_max_closeness.png}
       \caption{Top 10\% popularity subgraph, maximum closeness}
       \label{fig:hist3}
-    \end{subfigure}
-    \begin{subfigure}{.33\textwidth}
-      \centering
-      \captionsetup{justification=centering}
-      \includegraphics[width=\linewidth]{../../results/sub_genre/closeness.pdf}  % Usa \includegraphics per il PDF
-      \caption{closeness plot}
-      \label{fig:hist4}
-    \end{subfigure}
-    \begin{subfigure}{.33\textwidth}
-      \centering
-      \captionsetup{justification=centering}
-      \includegraphics[width=\linewidth]{../../results/sub_genre/betweenness.pdf}  % Usa \includegraphics per il PDF
-      \caption{betweenness plot}
-      \label{fig:hist5}
-    \end{subfigure}
-    \begin{subfigure}{.33\textwidth}
-      \centering
-      \captionsetup{justification=centering}
-      \includegraphics[width=1.25\linewidth, height=3cm]{../../results/sub_genre/correlation_matrix.pdf}  % Usa \includegraphics per il PDF
-      \caption{Correlation Matrix}
-      \label{fig:hist6}
     \end{subfigure}
     \caption{Example of histograms for the metrics computed on random graphs that do not have a Gaussian distribution according to the Shapiro-Wilk test.}
     \label{fig:hist}

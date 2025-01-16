@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -70,6 +71,7 @@ def generate_statistics_and_plots(combined_df):
     """
     Generate summary statistics and visualizations for the genres.
     """
+
     # Group by sub-genre and calculate summary statistics
     aggregated_stats = combined_df.groupby('sub_genre')[numeric_columns].agg(['mean', 'std', 'min', 'max', 'median'])
 
@@ -83,18 +85,22 @@ def generate_statistics_and_plots(combined_df):
         sns.boxplot(x='sub_genre', y=col, data=combined_df)
         plt.title(f'Comparison of {col.capitalize()} by Genre')
         plt.xticks(rotation=90)
-        plt.show()
+        plt.savefig(os.path.join(directory, f"analysis/boxplot_{col}.png"), bbox_inches='tight', pad_inches=0.2)
+        #plt.show()
 
     # Correlation heatmap of metrics
+
     correlation_matrix = combined_df[numeric_columns].corr()
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(20, 8))
     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
     plt.title('Correlation Matrix of Network Metrics')
-    plt.show()
+    plt.savefig(os.path.join(directory, "analysis/correlation.png"), bbox_inches='tight', pad_inches=0.2)
+    #plt.show()
 
     # Pairplot for visual comparison of the metrics
-    sns.pairplot(combined_df[numeric_columns + ['sub_genre']], hue='sub_genre', diag_kind='kde', markers='o')
-    plt.show()
+    #sns.pairplot(combined_df[numeric_columns + ['sub_genre']], hue='sub_genre', diag_kind='kde', markers='o')
+    #plt.savefig(os.path.join(directory, "analysis/pairplot.png"), bbox_inches='tight')
+    #plt.show()
 
 def main():
     try:

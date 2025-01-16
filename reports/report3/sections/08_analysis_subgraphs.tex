@@ -1,8 +1,8 @@
 \section{Data analysis on subgraphs}
-The analysis of subgraphs about genres reveals that there are significant variability among various types of music. 
+The analysis of the node-level metrics on subgraphs about several genres reveals that there are significant variability among various types of music. First, we plotted the distributions of these measures through boxplots, some of which are displayed in figure \ref{fig:boxplot}.
 Betweenness shows a non-uniform distribution; some genres have concentrated values, suggesting a more homogeneous "bridge" role, while others are more dispersed. 
 Similarly, closeness does not exhibit a uniform distribution, with some genres being closer to each other and others more distant, indicating heterogeneity in proximity between genres. 
-The clustering coefficient generally shows high values, but with a wide distribution, highlighting that while there is a tendency to form clusters, it is not uniform. The degree presents a heterogeneous distribution: some genres have more connections, while others have fewer. 
-The eigenvector shows a variable distribution, with some genres more concentrated at specific values. PageRank, on the other hand, displays a more concentrated distribution, with values less dispersed compared to the other metrics. 
-The correlation matrix reveals that some metrics, such as betweenness, degree, PageRank, and eigenvector, are strongly correlated with each other, while the clustering coefficient appears less correlated, suggesting that the tendency to form clusters depends on distinct factors.
-In the end we have considered the most popular artists in a subgraph and we can notice that the general metrics are higher than the real graph.
+The clustering coefficients generally shows high values, but with a wide distribution, highlighting that while there is a tendency to form clusters, it is not uniform. The degree centrality presents a heterogeneous distribution: some genres have more connections, while others have fewer.
+The eigenvector shows a variable distribution, with some genres more concentrated at specific values. PageRank, on the other hand, displays a more concentrated distribution, with values less dispersed compared to the other metrics. In general, closeness centrality values appear to have a much wider spread across most genres compared to all other metrics.
+
+We also computed the correlation matrix between all node-level metrics across all considered subgraphs, reported in figure \ref{fig:correlation}. It reveals that some metrics, such as betweenness, degree, PageRank, and eigenvector, are strongly correlated with each other, while the clustering coefficient appears less correlated, suggesting that the tendency to form clusters depends on distinct factors.
